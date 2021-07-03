@@ -1,0 +1,24 @@
+.okay {
+ border-color: teal;
+ border-width: 1px;
+ border-style: solid;
+}
+
+.okay:hover {
+    background-color: teal;
+    color:white
+}
+
+.nah {
+    border-color: #FCB635;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.nah:hover {
+    background-color: #FCB635;
+    color:white
+}
+
+
+

@@ -1,0 +1,40 @@
+#innerbox{
+    box-shadow: 10px 5px 5px grey;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 600ms;
+    transition: all 600ms;
+    z-index: 20;
+}
+
+#innerbox div {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+#innerbox{
+background-color:black;
+box-shadow: inset 0 0 10px grey
+}
+
+#tarotCard {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#tarotContent {
+
+}
+
+
+#tarotCard:hover #outerbox {
+-webkit-transform: rotateX(20deg);
+transform: rotateX(20deg);
+box-shadow: 0 20px 20px rgba(50,50,50,.2);
+}

@@ -1,0 +1,10 @@
+#action {
+    color:rgb(252, 45, 121);
+    text-decoration: none;
+    padding-inline: 5%;
+    position: relative;
+}
+
+#action:hover {
+    color: #FCB635
+}
