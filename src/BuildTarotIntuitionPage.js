@@ -49,13 +49,14 @@ export default function BuildTarotIntuitionPage() {
             Remember that whatever comes to mind when you look at these cards, comes to mind for a reason. 
             </a></p> 
 
-            <p style={{color:'black', fontStyle:'oblique'}}>Don't talk yourself out of your observations. There's no right or wrong. Just what you feel.</p>
+            <p style={{color:'black', fontStyle:'oblique'}}>This is all about <b>your</b> interpretation. Do <b>not</b> talk yourself out of <b>your</b> observations. There's no right or wrong. <b>Just what you feel.</b></p>
 
 {/* card container will get passed one prop: the name of the container. Using that name, cardContainer will fetch the cards its gotta fetch */}
         </div> 
 
         <div>
-        <h4 style={{fontFamily:'Khand', color:'cadetblue', padding:'2em'}}>Major Arcana</h4>
+        <h4 style={{fontFamily:'Khand', color:'cadetblue', paddingTop:'2em'}}>Major Arcana</h4>
+        <p style = {{color:'grey'}}>Think of the Major Arcana cards as character cards. The symbols that attracts your attention describe the character(s) in your story. How does this character feel? What is it doing? How does it see the world? </p>
             <CardContainer selectImage={  useCallback(
         (img)=>{
             selectTheImage(img)
@@ -64,7 +65,8 @@ export default function BuildTarotIntuitionPage() {
         </div>    
 
         <div>
-            <h4 style={{fontFamily:'Khand', color:'cadetblue'}}>Minor Arcana</h4>
+            <h4 style={{fontFamily:'Khand', color:'cadetblue'}}>Minor Arcana</h4> 
+            <p style = {{color:'grey'}}>Think of the Minor Arcana cards as depicting the <i>circumstances</i> surrounding the character(s) in your story. What situation was this character placed in? What is the mood of the scene? Picture yourself in the scene. How do you feel?</p>
             {
                 minorArcanas.map((name, i)=> {
                     return <CardContainer  selectImage={  useCallback(
