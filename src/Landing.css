@@ -1,0 +1,27 @@
+#action {
+    background-color: Teal;
+    height: 40vh;
+    width: 60vw;
+    text-decoration: none;
+    padding-inline: 5%;
+    position: relative;
+    display: inline-block;
+    /* font-family: 'Khand'; */
+    font-size: large;
+    font-weight: bold;
+    border-radius: '25%';
+}
+
+#action a:hover {
+    color: #FCB635;
+}
+
+#action a {
+    display: inline-block;
+    color:whitesmoke;
+    
+}
+
+#action a:active {
+    color:teal
+}
