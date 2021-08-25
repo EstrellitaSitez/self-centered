@@ -31,7 +31,7 @@ export default function ShadowWorkQuestions(props) {
             <div style={{marginTop:'2%', alignText:'center'}}>  
            <div style={{marginLeft:'auto', marginRight:'auto', marginBottom:'2%', width:'50vw'}}>
            {
-                (props.questions.length>0)? <div> <Divider/> <p>Use the '+' sign to add questions to your worksheet. You may add<b> up to three questions </b>across colors. When you are done, click on the 'Done' button that will appear above to download your worksheet.</p> <Divider/></div> : null
+                (props.questions.length>0)? <div> <Divider/> <p> Click on the box next to the questions you wish to add to your worksheet. You may add<b> up to three questions </b>across colors. When you are done, click on the 'Done' button that will appear above to download your worksheet.</p> <Divider/></div> : null
             }
            </div>
             {displayQuestions()}

@@ -1,13 +1,12 @@
 import React from 'react'
 import { isMobile } from 'react-device-detect'
 
+
 export default function ShadowWorkQuestion (props)  {
 
     const passQuestionShadowWorkQuestions = (e) => {
-        let color = (e.target.style['background-color'])
-        // let question = (e.target.previousElementSibling.textContent)
-    //    props.passQuestionToKnowThyselfContainer(question)
-    console.log(e.target.previousElementSibling.innerText)
+        let question = e.target.previousElementSibling.textContent
+       props.passQuestionToKnowThyselfContainer(question)
         e.target.style.backgroundColor = e.target.style.color
     }
 
@@ -19,7 +18,6 @@ export default function ShadowWorkQuestion (props)  {
         <button 
         style = {{height:'100%', fontSize: 'larger', fontWeight:'bolder' ,backgroundColor: props.color.background, borderRadius:10, padding: '2%', border:'none' }}
         onClick = {(e) => passQuestionShadowWorkQuestions(e)}>
-            +
         </button>
          </div>
     )
