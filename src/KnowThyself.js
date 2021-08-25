@@ -25,7 +25,6 @@ export default function KnowThyself() {
     const [displayedQuestions, displayQuestions] = useState([])
 
     const whichQuestions = () => {
-        console.log('inside whichQ')
         let questions = []
         if (selectedColor != null) {
             switch (selectedColor.background) {
@@ -180,7 +179,7 @@ export default function KnowThyself() {
         padding:'1%'
     }
 
-
+    const ref = React.useRef();
 
 
     return(
@@ -197,7 +196,7 @@ export default function KnowThyself() {
                         You have selected <b>{selectedQuestions.length}</b> questions. 
                         </div>
                         <br/>
-                        <PDFDownloadLink document={<MyDocument questions={selectedQuestions} />} fileName="Estrellita-Tarot-Know-Thyself.pdf">
+                        <PDFDownloadLink document={<MyDocument quote={ref.current?.innerText} questions={selectedQuestions} />} fileName="Estrellita-Tarot-Know-Thyself.pdf">
                          {({ blob, url, loading, error }) =>
                         loading ? <Spin/> : <span style={{color:'white', borderRadius:'20%', backgroundColor:'black', padding:'1%', maxWidth:'10em', textAlign:'center'}}>Done</span>
                             }
@@ -211,6 +210,12 @@ export default function KnowThyself() {
             <div>
             < ViewNeedsandFeels/>
             </div>
+            <p ref={ref} style={{color:'Teal', marginTop:'5%'}}>
+                    "To live in the world without becoming <br/>
+                         aware of the meaning of the world is like<br/>
+                         wandering about in a great library <br/>
+                         without touching the books."
+                    </p>
         </div>
     )
 }

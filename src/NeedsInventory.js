@@ -116,7 +116,7 @@ export default function NeedsInventory () {
         <div>
 
             <div style={{backgroundColor:'teal', color:'white', textAlign:'center', fontFamily:'Khand', fontSize: 'Large'}}>
-                Needs Inventory
+                Inventory of Needs
             </div>
 
             <Divider/>

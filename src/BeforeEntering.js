@@ -11,7 +11,6 @@ export default function BeforeEntering() {
     window.location='/bye'
   };
 
-  console.log("BEFORE ENTERING")
   return (
     <div >
     <div className={"modal fade" + (isModalVisible? " show d-block" : " d-none")} tabIndex="-1" role="dialog" >
@@ -43,7 +42,7 @@ export default function BeforeEntering() {
                 </div>
                 <div className="modal-footer" >
                     <button type="button" className="btn okay" onClick={()=> setIsModalVisible(false)}>I'm Ready</button>
-                    <button type="button" className="btn nah" onClick={()=>handleCancel()}>Nah, F*ck Growth</button>
+                    <button type="button" className="btn nah" onClick={()=>handleCancel()}>No, Fuck Growth</button>
                 </div>
             </div>
         </div>

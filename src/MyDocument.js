@@ -30,10 +30,7 @@ const MyDocument = (props) => (
     }
 
     <View style={{textAlign:'center', bottom:0}}>
-        <Text style={{color:'teal'}}>"To live in the world without becoming
-            aware of the meaning of the world is like
-            wandering about in a great library
-            without touching the books."</Text>
+        <Text style={{color:'teal'}}>{props.quote}</Text>
     </View>
    
     </Page>
