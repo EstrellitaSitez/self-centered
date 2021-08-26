@@ -1,25 +1,37 @@
+
+
 #action {
-    background-color: Teal;
-    height: 40vh;
+    font-family: 'Khand';
+    text-align: center;
+    align-items: center;
+    background-color: rgb(83, 173, 173);
+    height: 80%;
     width: 60vw;
-    text-decoration: none;
+    border-radius: '25%';
+    position: absolute;
     padding-inline: 5%;
+    padding-top: 2%;
+    text-decoration: none;
+    color:'teal';
     position: relative;
     display: inline-block;
     /* font-family: 'Khand'; */
-    font-size: large;
+    padding-bottom: 5%;
     font-weight: bold;
-    border-radius: '25%';
+ 
 }
 
 #action a:hover {
-    color: #FCB635;
+    color: #FCB635; 
 }
 
 #action a {
-    display: inline-block;
-    color:whitesmoke;
-    
+    display: block;
+    color:#414445;
+    font-size: 2em;
+    margin-bottom: 2%;
+    text-decoration: underline;
+
 }
 
 #action a:active {
