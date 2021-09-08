@@ -4,7 +4,7 @@ import {Link, useRouteMatch} from "react-router-dom";
 import {Card} from 'antd';
 
 import manifestation from './Assets/MeditationThumbnails/manifestation.png';
-import purpose from './Assets/MeditationThumbnails/purpose.png';
+import grounding from './Assets/MeditationThumbnails/grounding.png';
 import dettachment from './Assets/MeditationThumbnails/dettachment.png';
 import { isMobile } from 'react-device-detect';
 
@@ -37,9 +37,9 @@ export default function MeditationPage(){
         // being purposeful with our actions: what do you hope to gain out of this meditation?
         // silent mm meditation
         {
-            name: 'Purpose',
-            image: purpose,
-            imageName:'purpose',
+            name: 'Grounding',
+            image: grounding,
+            imageName:'grounding',
         }
 
     ]
@@ -48,7 +48,7 @@ export default function MeditationPage(){
 
     return(
         <div style={{height: '100%' ,textAlign:'center', color:'black'}}>
-           <div style={{backgroundColor:'#FCB635', padding:'1%'}}>
+           <div style={{fontFamily:'Khand', fontSize:'large' ,backgroundColor:'#FCB635', padding:'1%'}}>
                 Choose a meditation
            </div>
            <div id= 'meditations' style={{height: '100%', width:'100%', paddingTop:'3%' }}>

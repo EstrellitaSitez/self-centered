@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import 'antd/dist/antd.css';
 
 import { Route, Switch, BrowserRouter as Router , useRouteMatch} from 'react-router-dom';
@@ -20,6 +20,15 @@ import FeelingsInventory from './FeelingsInventory';
 
 function App() {
 
+  const hideLoader = () => {
+   const loader= document.querySelector('.loaderContainer')
+   loader.style.display ='none'
+  }
+
+  useEffect(()=>{
+    hideLoader()
+    window.sessionStorage.setItem('visited', true)
+  })
 
   return (
     

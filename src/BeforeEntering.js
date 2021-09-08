@@ -1,10 +1,23 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './BeforeEntering.css'
 
 export default function BeforeEntering() {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   //modal visible when website first loads
+
+  useEffect(()=>{
+      let hasShown = window.sessionStorage.getItem('visited')
+
+
+
+      setTimeout(() => {
+        if (!hasShown){
+            setIsModalVisible(true)
+        }
+      }, 300)
+
+  }, [isModalVisible])
 
   const handleCancel = () => {
     setIsModalVisible(false)

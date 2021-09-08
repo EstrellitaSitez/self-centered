@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Modal } from 'antd';
+import { Divider, Modal } from 'antd';
 import CloseIcon from './CloseIcon';
 
 
@@ -33,6 +33,17 @@ import CloseIcon from './CloseIcon';
         >
           <h1 style={{color:'white'}}>{props.image.name.toUpperCase()}</h1>
           <img src={props.image.source} style={{ width:'80vw', height:'100vh'}}/>
+          <Divider style={{backgroundColor:'burlywood'}}/>
+          <p style={{color:'whitesmoke',paddingTop:'1%'}}>
+            <li>What vibes do I get from the scene shown on the card?</li> 
+            <li>What figure/ symbol in this card draws my attention?</li>
+            <li>How would I feel if I were this figure/ symbol?</li> 
+            <li>Would I feel happy? Safe? Expansive? Restricted? Powerful? Vulnerable?</li> 
+            <li>What do the colors in this card tell me about the overall mood? </li>
+            <li> Where are my eyes drawn to? What do these items represent to me?</li>
+            <br/>
+            <i style={{color:'black',fontWeight:'400%'}}>Write down your observations.</i>  
+          </p>
         </Modal>
       </div>
     )

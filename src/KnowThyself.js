@@ -3,6 +3,7 @@ import ShadowWorkQuestions from './ShadowWorkQuestions'
 import ViewNeedsandFeels from './ViewNeedsandFeels'
 import { PDFDownloadLink} from '@react-pdf/renderer';
 import { Spin } from 'antd';
+import './KnowThyself.css'
 
 import MyDocument from './MyDocument'
 
@@ -111,7 +112,7 @@ export default function KnowThyself() {
                         'Do I feel disconnected from others? How?',
                         'Who/ What do I love talking to? Why?',
                         'How can I strengthen my voice without restricting anybody else`s?',
-                        'Where can I take accountability for my behavior?'
+                        `Where can I take accountability for my behavior? Why haven't I?`
                     ]
                     displayQuestions(questions)
                     break;
@@ -163,9 +164,13 @@ export default function KnowThyself() {
     const makeCircles = () => {
         return colors.map(
             (color, i) => {
-                return <div onClick={()=> {
-                                    selectColor(color) }} 
-                            key={i} style={{backgroundColor: color.background, borderRadius:'50%', width:'7em', height:'7em', padding: '2%', margin:'1%'}}> </div>
+                return (
+                    <div style={{border:'1em double', borderRadius:'50%', borderColor: color.background}}
+                         onClick={()=> {
+                        selectColor(color) }} >
+                        <div id='innerCircle' key={i}> </div> 
+                    </div>
+                )
             }
         )
     }
@@ -184,8 +189,8 @@ export default function KnowThyself() {
 
     return(
         <div style={{textAlign:'center'}}>
-            <div style={{ padding:'1%', color:'white', backgroundColor:'black', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Click on a color to see journaling prompts to guide you through your self discovery. </div>
-            <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%'}}>
+            <div style={{ padding:'1%', color:'white', backgroundColor:'black', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Select a mirror to see journaling prompts that will guide you through your self discovery. </div>
+            <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%', flexWrap:'wrap'}}>
             {makeCircles()}
             </div>
 

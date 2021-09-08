@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from "react-router-dom";
 
 import ManifestationMeditation from './Meditations/ManifestationMeditation';
-import PurposeMeditation from './Meditations/PurposeMeditation';
+import GroundingMeditation from './Meditations/GroundingMeditation';
 import DettachmentMeditation from './Meditations/DettachmentMeditation';
 
 export default function MeditationContainer(){
@@ -12,8 +12,8 @@ export default function MeditationContainer(){
     let name = meditationName.toUpperCase();
 
     switch (name) {
-        case 'PURPOSE':
-            return <PurposeMeditation/>
+        case 'GROUNDING':
+            return <GroundingMeditation/>
             break;
     
         case 'DETTACHMENT':

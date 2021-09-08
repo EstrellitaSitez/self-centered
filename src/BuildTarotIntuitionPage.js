@@ -38,13 +38,12 @@ export default function BuildTarotIntuitionPage() {
             padding: '2em'
             }}>
                 <p>
-                With the following exercise we will be learning to trust ourselves more by building our <i>intuition</i> as well as our self-confidence. <i>We've all heard of that quote by Alexander Hamilton -- "If you don't stand for something, you'll fall for everything"?</i> It turns out he's right. We must stregnthen our sense self so that we can have a grasp on who we are, regardless of who this world tells us we should be.</p>
+                 <i>"If you don't stand for something, you'll fall for everything"</i> --Alexander Hamilton </p>
                 <p>
-                 The tarot cards below will function as a mirror, but a little less direct. In the tarot cards we will see situations that live in our minds rent free, yet charge us an unexpeted amount of emotional labor. In combination with the Know Thyself and Meditation modules, we will learn how the way we perceive these situations are guiding our physical and emotional responses. 
+                 We must strengthen our sense self so that we can have a grasp on who we are, regardless of who this world tells us we should be. In the tarot cards below, we will see situations that live in our minds rent free, yet charge us an unexpeted amount of emotional labor. In combination with the Know Thyself and Meditation modules, we will learn how our perception of our circumstances guides our physical and emotional responses. 
                 </p>
             <p>
-                Click on the cards that grab your attention. <b><i>Think:</i></b>  What vibes do I get from the scene shown on the card? How would I feel if I were the figure/ symbol in this card? Would I feel happy? Safe? Expansive? Restricted? What do the colors in this card tell me about the overall mood? Where are my eyes drawn to? What do these items represent to me? <b><i>Write down your observations.</i></b>  
-                Together, the cards you've selected will tell a story? What is yours?
+                Click on the cards that grab your attention and take a look at the guiding questions.
             </p>
 
             <p id='note' > <a style={{color:'black', fontWeight:'bold'}} href='https://c.tenor.com/tAkRmpf8yTAAAAAC/whats-was-the-reason.gif'> 

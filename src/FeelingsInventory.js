@@ -1,6 +1,8 @@
 import { Divider } from 'antd'
 import React from 'react'
 
+import './Note.css'
+
 
 export default function FeelingsInventory(){
 
@@ -338,12 +340,14 @@ export default function FeelingsInventory(){
             <div  style={{ width:'80vw', marginLeft:'10%', marginRight:'10%', display:'flex', flexDirection:'row', flexWrap:'wrap'}}>
                 {createColumn(satisfiedNeeds)}
             </div>
-        <div style={{textAlign:'center'}}>
-            {
-               makeArrows()
-            }   
-        </div>
-            <div style={{backgroundColor:'black', color:'white', textAlign:'center', fontFamily:'Khand', fontSize: 'Large', marginTop:'3%'}}>
+               
+            <div style={{textAlign:'center', marginTop:'3%'}}>
+            (c) 2005 by Center for Nonviolent Communication <br/>
+            Website: www.cnvc.org Email: cnvc@cnvc.org<br/>
+            Phone: +1.505-244-4041      
+            </div>
+
+            <div id='unsatisfied' style={{backgroundColor:'black', color:'white', textAlign:'center', fontFamily:'Khand', fontSize: 'Large', marginTop:'3%'}}>
                 Emotions From Unsatisfied Needs
             </div>  
 
@@ -356,6 +360,17 @@ export default function FeelingsInventory(){
             Website: www.cnvc.org Email: cnvc@cnvc.org<br/>
             Phone: +1.505-244-4041      
             </div>
+
+            <div id='footer'>
+             
+                     <p id='note'><a href='#unsatisfied'> ...Unsatisfied Needs </a></p>
+
+                   
+               
+
+            </div>
+            
+
         </div>
     )
 
