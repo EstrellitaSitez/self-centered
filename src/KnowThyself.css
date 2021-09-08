@@ -1,5 +1,5 @@
 #innerCircle{
-    background: linear-gradient(to right, #E9F8FF, #90B2D8, #C1E3FF);
+    background: linear-gradient(80deg, hsl(207, 100%, 88%),white, #C1E3FF);
     border-radius:50%;
     width:7em;
     height:7em;
