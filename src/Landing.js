@@ -18,7 +18,7 @@ export default function Landing() {
   }
 
   const parentDivStyle ={
-    height:'100%',
+    // maxHeight:'50vh'
 
   }
 
@@ -58,9 +58,10 @@ export default function Landing() {
   // }
   // I want to show loading icon while image loads 
 
+
     return(
-        <div style={{textAlign:'center', height:'100%', backgroundColor:'black'}}>
-        <Carousel autoplay style={{padding:'3em'}}>
+        // <div style={{height:'80vh'}}>
+        <Carousel autoplay style={{padding:'3em', textAlign:'center', backgroundColor:'black', borderRadius:'2%'}} swipe={true} arrows={!isMobile? true : false} adaptiveHeight={true}>
 
 
         <div style={parentDivStyle}>
@@ -114,7 +115,7 @@ export default function Landing() {
         </div>
 
       </Carousel>
-      </div>
+      //  </div>
     )
 }
 
