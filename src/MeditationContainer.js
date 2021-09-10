@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 
-import ManifestationMeditation from './Meditations/ManifestationMeditation';
+import VisualizationMeditation from './Meditations/VisualizationMeditation';
 import GroundingMeditation from './Meditations/GroundingMeditation';
 import DettachmentMeditation from './Meditations/DettachmentMeditation';
 
@@ -20,8 +20,8 @@ export default function MeditationContainer(){
             return <DettachmentMeditation/>
             break;    
 
-        case 'MANIFESTATION':
-            return <ManifestationMeditation/>
+        case 'VISUALIZATION':
+            return <VisualizationMeditation/>
             break;  
 
         default:

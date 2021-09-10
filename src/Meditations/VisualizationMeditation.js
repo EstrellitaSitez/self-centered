@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ManifestationMeditation(){
+export default function VisualizationMeditation(){
     return (
         <div>
-            Manifestation 
+            Vis 
         </div>
     )
 }
