@@ -63,7 +63,13 @@ export default function Landing() {
 
     return(
         // <div style={{height:'80vh'}}>
-        <Carousel autoplay style={{padding:'3em', textAlign:'center', backgroundColor:'black', borderRadius:'2%'}} swipe={true} arrows={!isMobile? true : false} adaptiveHeight={true}>
+        <Carousel autoplay 
+        style={{padding:'3em', textAlign:'center', backgroundColor:'black', borderRadius:'2%'}} 
+        swipe={true} 
+        arrows={!isMobile? true : false} 
+        adaptiveHeight={true}
+        autoplaySpeed={5000}
+        >
 
 
         <div style={parentDivStyle}>
