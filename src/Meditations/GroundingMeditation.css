@@ -1,11 +1,27 @@
 .medText{
-    /* display: inline-block; */
-    /* font-family: Arial, Helvetica, sans-serif;
-    font-size: 150px;
-    color: black; */
+    display: block;
+    position: absolute;
+    margin-top: 45%;
     animation: fadeIn linear 2s;
-
   }
+
+  .dettachment{
+    /* min-height: auto; */
+    min-width: 100%;
+    border-radius: 50%;
+    background-color: yellow;
+    padding-bottom: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rajdhani';
+    animation: throb 15s infinite;
+    -moz-animation:  throb 15s infinite;    /* Firefox */
+    -webkit-animation:  throb 15s infinite; /* Safari and Chrome */
+    -o-animation:  throb 15s infinite;    /* Opera */
+    -ms-animation:  throb 15s infinite; 
+    
+}
 
   
   @keyframes fadeIn {
@@ -13,4 +29,263 @@
     50% {opacity:0.5;}
     100% {opacity:1;}
   }
-  
+
+
+  @keyframes throb {
+      0% {
+        height: 100%;
+        width: 100%
+      }
+      10% {
+          height: 90%;
+          width:90%;
+          background-color:'teal'
+      }
+      20% {
+          height: 80%;
+          width: 80%
+      }
+      30% {
+          height: 70%;
+          width: 70%;
+          background-color:'teal'
+      }
+      40% {
+          height:60%;
+          width: 60%
+      }
+      50% {
+         height: 50%;
+         width: 50%
+      }
+      60% {
+          height: 60%;
+          width: 60%
+      }
+      70% {
+          height:70%;
+          width: 70%
+      }
+      80% {
+          height: 80%;
+          width: 80%
+      }
+      90% {
+          height:90%; 
+          width: 90%
+      }
+      100% {
+          height: 100%;
+          width: 100%
+      }
+  }
+
+
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    50% {opacity:0.5;}
+    100% {opacity:1;}
+  }
+
+
+  @-moz-keyframes throb {
+      0% {
+        height: 100%;
+        width: 100%
+      }
+      10% {
+          height: 90%;
+          width:90%;
+          background-color:'teal'
+      }
+      20% {
+          height: 80%;
+          width: 80%
+      }
+      30% {
+          height: 70%;
+          width: 70%;
+          background-color:'teal'
+      }
+      40% {
+          height:60%;
+          width: 60%
+      }
+      50% {
+         height: 50%;
+         width: 50%
+      }
+      60% {
+          height: 60%;
+          width: 60%
+      }
+      70% {
+          height:70%;
+          width: 70%
+      }
+      80% {
+          height: 80%;
+          width: 80%
+      }
+      90% {
+          height:90%; 
+          width: 90%
+      }
+      100% {
+          height: 100%;
+          width: 100%
+      }
+  }
+
+
+
+  @-webkit-keyframes throb {
+    0% {
+      height: 100%;
+      width: 100%
+    }
+    10% {
+        height: 90%;
+        width:90%;
+        background-color:'teal'
+    }
+    20% {
+        height: 80%;
+        width: 80%
+    }
+    30% {
+        height: 70%;
+        width: 70%;
+        background-color:'teal'
+    }
+    40% {
+        height:60%;
+        width: 60%
+    }
+    50% {
+       height: 50%;
+       width: 50%
+    }
+    60% {
+        height: 60%;
+        width: 60%
+    }
+    70% {
+        height:70%;
+        width: 70%
+    }
+    80% {
+        height: 80%;
+        width: 80%
+    }
+    90% {
+        height:90%; 
+        width: 90%
+    }
+    100% {
+        height: 100%;
+        width: 100%
+    }
+}
+
+
+@-o-keyframes throb {
+    0% {
+      height: 100%;
+      width: 100%
+    }
+    10% {
+        height: 90%;
+        width:90%;
+        background-color:'teal'
+    }
+    20% {
+        height: 80%;
+        width: 80%
+    }
+    30% {
+        height: 70%;
+        width: 70%;
+        background-color:'teal'
+    }
+    40% {
+        height:60%;
+        width: 60%
+    }
+    50% {
+       height: 50%;
+       width: 50%
+    }
+    60% {
+        height: 60%;
+        width: 60%
+    }
+    70% {
+        height:70%;
+        width: 70%
+    }
+    80% {
+        height: 80%;
+        width: 80%
+    }
+    90% {
+        height:90%; 
+        width: 90%
+    }
+    100% {
+        height: 100%;
+        width: 100%
+    }
+}
+
+
+@-ms-keyframes throb {
+    0% {
+      height: 100%;
+      width: 100%
+    }
+    10% {
+        height: 90%;
+        width:90%;
+        background-color:'teal'
+    }
+    20% {
+        height: 80%;
+        width: 80%
+    }
+    30% {
+        height: 70%;
+        width: 70%;
+        background-color:'teal'
+    }
+    40% {
+        height:60%;
+        width: 60%
+    }
+    50% {
+       height: 50%;
+       width: 50%
+    }
+    60% {
+        height: 60%;
+        width: 60%
+    }
+    70% {
+        height:70%;
+        width: 70%
+    }
+    80% {
+        height: 80%;
+        width: 80%
+    }
+    90% {
+        height:90%; 
+        width: 90%
+    }
+    100% {
+        height: 100%;
+        width: 100%
+    }
+}
+

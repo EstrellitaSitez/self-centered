@@ -35,7 +35,7 @@ export default function GroundingMeditation(){
         {
             isMobile? '' : <p style={{color:'grey'}}>(scroll to center of circle)</p>
         }
-        <div id={'dettachment' } >
+        <div className='dettachment'>
              <span className='medText' style={{display:spanDisplay}}>
                {
                 (seconds > 50)? `Your meditation will start in ${seconds}s. Take this moment to inhale slowly and deeply` : ''
