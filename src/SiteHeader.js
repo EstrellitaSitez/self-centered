@@ -14,12 +14,20 @@ export default function SiteHeader(){
 
 
     return(
-        <div style={{background:'white', textAlign:'center', position:'relative', width:widthSH(), paddingTop:'1%', paddingBottom:'0'}}>
+        <div style={{background:'white', fontFamily:'Khand', textAlign:'center', position:'relative', width:widthSH(), paddingTop:'1%', paddingBottom:'0'}}>
             <a href= '/'>
-               <h1 style={{ color: 'black', paddingTop:'1%', fontWeight:'lighter'}}>
-                        E S T R E L L I T A {isMobile? <br/> : <span>&nbsp;</span>} T A R O T
+               <h1 style={{ color: 'black', paddingTop:'1%', height:'100%'}}>
+                        S E L F  {isMobile? <br/> : <span>&nbsp;</span>} C E N T E R E D
                     </h1>
+                <br/>
             </a>
+           
+               
+               <p>
+                 <i>“Knowing yourself is the beginning of all wisdom.” </i>
+                </p>
+                <p>— Aristotle</p>
+                
         </div>
     )
 
