@@ -5,7 +5,6 @@ import { Route, Switch, BrowserRouter as Router , useRouteMatch} from 'react-rou
 
 import Landing from './Landing';
 import SiteHeader from './SiteHeader';
-import BeforeEntering from './BeforeEntering';
 import MeditationPage from './MeditationPage';
 import MeditationContainer from './MeditationContainer';
 import BuildTarotIntuitionPage from './BuildTarotIntuitionPage';
