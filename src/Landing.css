@@ -4,7 +4,8 @@
     font-family: 'Khand';
     text-align: center;
     align-items: center;
-    background-color: rgb(83, 173, 173);
+    /* background-color: rgb(83, 173, 173); */
+    background-color: blanchedalmond;
     height: 70%;
     width: 60vw;
     position: absolute;
@@ -18,7 +19,7 @@
     /* font-family: 'Khand'; */
     padding-bottom: 5%;
     font-weight: bold;
-    border:solid;
+    /* border:solid; */
     border-radius: 5%;
  
 }
@@ -44,7 +45,7 @@
 }
 
 .ant-carousel .slick-prev, .ant-carousel .slick-next{
-    color:grey;
+    color:beige;
     font-size: 1em;
     position: absolute;
     width:fit-content;

@@ -1,4 +1,4 @@
-import React, {areEqual, prevProps, nextProps} from 'react';
+import React from 'react';
 import TarotCard from './TarotCard';
 
 

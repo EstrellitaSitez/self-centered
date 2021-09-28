@@ -189,7 +189,8 @@ export default function KnowThyself() {
 
     return(
         <div style={{textAlign:'center'}}>
-            <div style={{ padding:'1%', color:'white', backgroundColor:'black', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Select a mirror to see journaling prompts that will guide you through your self discovery. </div>
+            <div style={{ padding:'1%', color:'white', backgroundColor:'rgb(83, 173, 173)', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Select a mirror to see journaling prompts that will guide you through your self discovery. </div>
+           <div style={{    backgroundColor: 'blanchedalmond'}}>
             <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%', flexWrap:'wrap'}}>
             {makeCircles()}
             </div>
@@ -221,6 +222,7 @@ export default function KnowThyself() {
                          wandering about in a great library <br/>
                          without touching the books."
                     </p>
+            </div>
         </div>
     )
 }

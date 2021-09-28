@@ -34,7 +34,6 @@ function App() {
     
     <div className='App container-fluid'>
      
-    <BeforeEntering/>
     <SiteHeader/>
 
     <br></br>

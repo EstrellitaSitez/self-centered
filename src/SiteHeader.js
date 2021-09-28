@@ -1,3 +1,4 @@
+import { Divider } from 'antd';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
 
@@ -19,7 +20,6 @@ export default function SiteHeader(){
                <h1 style={{ color: 'black', paddingTop:'1%', height:'100%'}}>
                         S E L F  {isMobile? <br/> : <span>&nbsp;</span>} C E N T E R E D
                     </h1>
-                <br/>
             </a>
            
                
@@ -27,6 +27,8 @@ export default function SiteHeader(){
                  <i>“Knowing yourself is the beginning of all wisdom.” </i>
                 </p>
                 <p>— Aristotle</p>
+
+                <Divider/>
                 
         </div>
     )

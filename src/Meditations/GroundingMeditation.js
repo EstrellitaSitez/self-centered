@@ -6,7 +6,7 @@ export default function GroundingMeditation(){
   
 
     const [spanDisplay, setDisplay] = useState('block')
-    const [seconds, setSeconds] = useState(60)
+    const [seconds, setSeconds] = useState(300)
 
  
    
@@ -38,7 +38,7 @@ export default function GroundingMeditation(){
         <div className='dettachment'>
              <span className='medText' style={{display:spanDisplay}}>
                {
-                (seconds > 50)? `Your meditation will start in ${seconds}s. Take this moment to inhale slowly and deeply` : ''
+                (seconds > 50)? `Take this moment to inhale slowly and deeply.` : ''
                }
                </span>
             <span className='medText one' style={{display:spanDisplay, animationDelay:'12s'}}>
@@ -53,7 +53,7 @@ export default function GroundingMeditation(){
             </span>
             <span className='medText' style={{display:spanDisplay, animationDelay:'46s'}}>
                 {
-                   (seconds<15 && seconds>6)? 'Make sure you are sitting comfortably. Your meditation will begin shortly.' : ''
+                   (seconds<15 && seconds>6)? 'Sit comfortably and breathe into that knot in your back.' : ''
                }
              </span>
              <span className='medText' style={{display:spanDisplay, animationDelay:'55s'}}>

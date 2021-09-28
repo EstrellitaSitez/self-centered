@@ -18,7 +18,7 @@ export default function MeditationPage(){
          {  name: 'Visualization',
             image: visualization,
             imageName:'visualization',
-            desc: `This meditation is particularly beneficial if you're trying to sharpen your mind's eye. Visualization techniques can spice up your lucid dreaming/ astral projection skills as you learn to fully immerse yourself in worlds of your own creation. More often than not, we are focused on one of our senses more than the others. Visualizing multiple sensory inputs can help us expand the range of information we receive from our physical world as we gain awareness of all of our senses. `
+            desc: `This meditation is particularly beneficial if you're trying to sharpen your mind's eye. Visualization can help us enhance our perception of our physical reality as we become more aware of the tools through which we experience the world: our senses. `
         },
         // game
         {
@@ -44,17 +44,15 @@ export default function MeditationPage(){
 
     return(
         <div style={{height: '100%' ,textAlign:'center', color:'black'}}>
-            <Divider/>
-           <div style={{fontFamily:'Khand', fontSize:'large' ,backgroundColor:'white', padding:'1%'}}>
-                <p>Keep an open mind. </p>
+           <div style={{fontFamily:'Khand',backgroundColor:'white', fontSize:'large', padding:'1%'}}>
                 <p>
-                These meditations may be a little different than what you're be used to. If you believe that meditating is about redefining the <i>relationship</i> with we have with our thoughts, our bodily senses, and consequently the way we interact with the reality around us, you are at the right place. If you subscribe to the idea that meditation is strictly about silence and the absence of thought, <a href='/bye'> this is not the site for you.</a> </p>
+                Meditation is about observing the <i>relationship</i> that we have with our thoughts and bodily senses, and consequently redefining the way that we interact with the reality around us.</p>
                 <p><b>Remember that thinking is part of the human experience. The problem arises when we see ourselves <i>as</i> these thoughts.
                 </b> </p>
            </div>
             <Divider/>
             
-                <div id= 'meditations' style={{height: '100%', width:'100%', padding:'3%', margin:'auto', backgroundColor: (isMobile? 'white': 'black')}}>
+                <div id= 'meditations' style={{height: '100%', width:'100%', padding:'3%', margin:'auto', backgroundColor: (isMobile? 'white': 'blanchedalmond')}}>
                 {
                     meditations.map((meditation)=> {
                         return (
@@ -62,8 +60,9 @@ export default function MeditationPage(){
                             <Card
                             hoverable
                             // loading
-                            style={{ width: isMobile? '100%': '25%', display:'inline-block', marginBottom:'1em',  border: isMobile? '1em solid':'none' }}
-                            cover={<img style={{ }} alt={meditation.imageName} src={meditation.image} />}
+                            bordered
+                            style={{ padding:'1%',width: isMobile? '100%': '25%', display:'inline-block', marginBottom:'1em', borderRadius:'1em'}}
+                            cover={<img style={{ borderRadius:'1em'}} alt={meditation.imageName} src={meditation.image} />}
                             >
                             <Meta  title={meditation.name} description={meditation.desc} />
                           </Card>

@@ -18,22 +18,22 @@ import CloseIcon from './CloseIcon';
 
     console.log(props)
     return(
-        <div >
+        <div>
         <Modal
-            style= {{top:0, fontWeight:'bold', fontFamily: 'Rajdhani', textAlign:'center'}}
+            style= {{top:0, fontWeight:'bold', fontFamily: 'Rajdhani', textAlign:'center', width:'fit-content'}}
           visible={visible}
           closable= {true}
           onCancel={handleCancel}
-          maskStyle={{backgroundColor:'black', width:'98vw', marginLeft:'auto', marginRight:'auto', marginTop:0}}
+          maskStyle={{backgroundColor:'rgb(0, 0, 0, 0.7)', width:'98vw', marginLeft:'auto', marginRight:'auto', marginTop:0}}
           width='100%'
-          bodyStyle={{backgroundColor:'teal'}}
-          footerStyle={{backgroundColor:'teal'}}
+          bodyStyle={{backgroundColor:'rgb(83, 173, 173)'}}
+          footerStyle={{backgroundColor:'whitesmoke'}}
           footer= {null}
           closeIcon= {<CloseIcon/>}
         >
           <h1 style={{color:'white'}}>{props.image.name.toUpperCase()}</h1>
           <img src={props.image.source} style={{ width:'80vw', height:'100vh'}}/>
-          <Divider style={{backgroundColor:'burlywood'}}/>
+          <Divider style={{backgroundColor:'whitesmoke'}}/>
           <p style={{color:'whitesmoke',paddingTop:'1%'}}>
             <li>What vibes do I get from the scene shown on the card?</li> 
             <li>What figure/ symbol in this card draws my attention?</li>
@@ -42,7 +42,7 @@ import CloseIcon from './CloseIcon';
             <li>What do the colors in this card tell me about the overall mood? </li>
             <li> Where are my eyes drawn to? What do these items represent to me?</li>
             <br/>
-            <i style={{color:'black',fontWeight:'400%'}}>Write down your observations.</i>  
+            <i style={{fontWeight:'400%'}}>Write down your observations.</i>  
           </p>
         </Modal>
       </div>

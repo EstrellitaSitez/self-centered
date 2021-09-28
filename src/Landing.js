@@ -64,29 +64,12 @@ export default function Landing() {
     return(
         // <div style={{height:'80vh'}}>
         <Carousel autoplay 
-        style={{padding:'3em', textAlign:'center', backgroundColor:'black', borderRadius:'2%'}} 
+        style={{padding:'3em', textAlign:'center', backgroundColor:'teal', borderRadius:'2%'}} 
         swipe={true} 
         arrows={!isMobile? true : false} 
         adaptiveHeight={true}
-        autoplaySpeed={5000}
+        autoplaySpeed={4500}
         >
-
-
-        <div style={parentDivStyle}>
-        <div id='action'>  
-          <div style={divStyle}>
-          <img src={tarot} style={imageStyle} alt='tarot cards'/>
-          <div style={divStyle2}>
-            <div style={divStyle3}>
-            <p style={pStyle}>
-              Work on enhancing your intuition and building your self confidence by studying Tarot! Yes, Tarot. Think of this module as a house of mirrors -- all reflecting different sectors of your complex mind.
-            </p>
-            <a href='/view-cards' > View Cards ➩</a>
-            </div>
-          </div>
-        </div>
-          </div>
-        </div>
 
 
         <div style={parentDivStyle}>
@@ -105,6 +88,21 @@ export default function Landing() {
           </div>
         </div>
 
+        <div style={parentDivStyle}>
+        <div id='action'>  
+          <div style={divStyle}>
+          <img src={tarot} style={imageStyle} alt='tarot cards'/>
+          <div style={divStyle2}>
+            <div style={divStyle3}>
+            <p style={pStyle}>
+              Work on enhancing your intuition and building your self confidence by studying Tarot! Yes, Tarot. Think of this module as a house of mirrors -- all reflecting different sectors of your complex mind.
+            </p>
+            <a href='/view-cards' > View Cards ➩</a>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
 
         <div style={parentDivStyle}>
         <div id='action'>    
@@ -113,7 +111,7 @@ export default function Landing() {
           <div style={divStyle2}>
             <div style={divStyle3}>
             <p style={pStyle}>
-              It's very easy to get swept up by our mind and all its passing thoughts. These exercises are meant to deepend your awareness so that you can exert more control of your mind. Not the other way around.
+              It's very easy to get swept up by our mind and all its passing thoughts. These exercises are meant to deepen your awareness so that you can exert more control of your mind. Not the other way around.
             </p>
             <a href='/meditation' > Meditations ➩</a>
             </div>
