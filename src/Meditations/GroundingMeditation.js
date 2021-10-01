@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { isMobile } from 'react-device-detect'
 import './GroundingMeditation.css'
 
+
 export default function GroundingMeditation(){
   
 
@@ -12,7 +13,7 @@ export default function GroundingMeditation(){
    
     useEffect(
         () => {
-            if (seconds > 0) {
+            if ((seconds > 0 )) {
                 setTimeout(() => setSeconds(seconds - 1), 1000);
               } else {
                 setDisplay('none');
@@ -20,48 +21,162 @@ export default function GroundingMeditation(){
         }, [seconds, spanDisplay]
     )
 
-    const showMeditation = () => {
-        if (spanDisplay==='block'){
-            return 'none'
-        } else {
-            return 'block'
-        }
-    }
+    // const showMeditation = () => {
+    //     if (spanDisplay==='block'){
+    //         return 'none'
+    //     } else {
+    //         return 'block'
+    //     }
+    // }
 
- 
+    let sec = seconds%60
+    let min = seconds/60
+
 
     return (
-        <div style={{textAlign:'center'}}>
+        <div className='container' >
         {
-            isMobile? '' : <p style={{color:'grey'}}>(scroll to center of circle)</p>
+            ((!isMobile))? <p style={{color:'grey'}}>(scroll to center of circle)</p> : ''
         }
-        <div className='dettachment'>
+       <span style={{color:'teal', fontFamily:'Khand'}}>Time: {Math.round(min)}m:{Math.round(sec)}s</span>
+       <div className='dettachment'>
+
+       </div>
+        <div className='dettachmentText'>
              <span className='medText' style={{display:spanDisplay}}>
                {
-                (seconds > 50)? `Take this moment to inhale slowly and deeply.` : ''
+                (seconds > 240)? `Take this moment to inhale slowly and deeply.` : ''
                }
                </span>
-            <span className='medText one' style={{display:spanDisplay, animationDelay:'12s'}}>
+            <span className='medText one' style={{display:spanDisplay, animationDelay:'60s'}}>
                {
-                  ( (seconds < 49) && (seconds>30))? 'Place your hand on your abdomen and feel it rise.' : ''
+                  ( (seconds < 240) && (seconds>225))? 'Place your hand on your abdomen and feel it rise.' : ''
                }
                </span>
-            <span className='medText' style={{display:spanDisplay, animationDelay:'32s'}}>
+            <span className='medText' style={{display:spanDisplay, animationDelay:'75s'}}>
                {
-                   (seconds<29 && seconds>15)? 'On exhale, let go for your jaw and drop your shoulders.' : ''
+                   (seconds<225 && seconds>215)? 'And fall.' : ''
                }
             </span>
-            <span className='medText' style={{display:spanDisplay, animationDelay:'46s'}}>
+            <span className='medText' style={{display:spanDisplay, animationDelay:'85s'}}>
                 {
-                   (seconds<15 && seconds>6)? 'Sit comfortably and breathe into that knot in your back.' : ''
+                   (seconds<215 && seconds>205)? 'Make sure you are sitting comfortably in your seat' : ''
                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'95s'}}>
+                {
+                   (seconds<205 && seconds>195)? `Inhale deeply and slowly.` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'105s'}}>
+                {
+                   (seconds<195 && seconds>190)? `Pause. ${seconds-190}` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'110s'}}>
+                {
+                   (seconds<190 && seconds>180)? `Exhale slowly` : ''
+               }
+             </span>
+{/* UPPER BODY */}
+             <span className='medText' style={{display:spanDisplay, animationDelay:'120s'}}>
+                {
+                   (seconds<180 && seconds>173)? `As you continue breathing, make note of how your shoulders feel.` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'127s'}}>
+                {
+                   (seconds<173 && seconds>167)? `Do they feel heavy? Tense?` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'133s'}}>
+                {
+                   (seconds<167 && seconds>160)? `Relax your shoulders. ` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'140s'}}>
+                {
+                   (seconds<160 && seconds>150)? `Feel your Left shoulder blade dissolve. Breathe.` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'150s'}}>
+                {
+                   (seconds<150 && seconds>140)? `Feel your Right shoulder blade dissolve. Breathe.` : ''
+               }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'160s'}}>
+                {
+                   (seconds<140 && seconds>127)? `Straighen your spine. Relax your shoulders. Breathe slowly into your midback. Feel it exapnd.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'173s'}}>
+                {
+                   (seconds<127 && seconds>117)? `Let this sensation travel down your spine to your lowerback. Feel it dissolve.` : ''
+                }
+             </span>
+{/* LOWER BODY */}
+             <span className='medText' style={{display:spanDisplay, animationDelay:'183s'}}>
+                {
+                   (seconds<117 && seconds>110)? `Feel the sides of your butt melt into your seat.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'190s'}}>
+                {
+                   (seconds<110 && seconds>95)? `Notice as your thighs start to melt into the seat, too. Breathe` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'205s'}}>
+                {
+                   (seconds<95 && seconds>90)? `Try to breathe with your pelvis` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'210s'}}>
+                {
+                   (seconds<90 && seconds>80)? `Feel your pelvis expand as you breath in slowly and deeply.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'220s'}}>
+                {
+                   (seconds<80 && seconds>70)? `Feel your pelvis relaxing as you exhale slowly.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'230s'}}>
+                {
+                   (seconds<70 && seconds>60)? `Notice as your thighs begin to melt into the seat below you.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'240s'}}>
+                {
+                   (seconds<60 && seconds>50)? `Feel the tension around your knees dissolve.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'250s'}}>
+                {
+                   (seconds<50 && seconds>40)? `Let that sensation drip down onto your calves and feel your legs loosen up.` : ''
+                }
+             </span>
+             <span className='medText' style={{display:spanDisplay, animationDelay:'260s'}}>
+                {
+                   (seconds<40 && seconds>30)? `Feel the tension dissolving around your ankles.` : ''
+                }
+             </span>
+
+             <span className='medText' style={{display:spanDisplay, animationDelay:'55s'}}>
+                {
+                   (seconds<30 && seconds>20)? `Dissolve the tension in the soles of your feet. ` : ''
+                }
              </span>
              <span className='medText' style={{display:spanDisplay, animationDelay:'55s'}}>
                 {
-                   (seconds<6)? `${seconds}s` : ''
-               }
+                   (seconds<20 && seconds>5)? `On exhale, melt into your seat.` : ''
+                }
              </span>
- 
+             <span className='medText' style={{display:spanDisplay, animationDelay:'55s'}}>
+                {
+                   (seconds<5 && seconds>0)? `${seconds}` : ''
+                }
+             </span>
+
 
         </div>
         </div>
@@ -72,7 +187,3 @@ export default function GroundingMeditation(){
 // Add a fricken back button to each meditation
 // breathe into your body parts (bigger ones) /dissolve your smaller body parts as you scan them 
 // notice where in our bodies we feel tension/ discomfort
-
-// notice belly rise and fall
-// notice heart beat 
-//And now, let your attention to expand out to include the entire body as a whole. Bring into your awareness the top of your head down to the bottom of your toes. 

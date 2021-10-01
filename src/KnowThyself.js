@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ShadowWorkQuestions from './ShadowWorkQuestions'
 import ViewNeedsandFeels from './ViewNeedsandFeels'
 import { PDFDownloadLink} from '@react-pdf/renderer';
-import { Spin } from 'antd';
+import { Divider, Spin } from 'antd';
 import './KnowThyself.css'
 
 import MyDocument from './MyDocument'
@@ -190,6 +190,15 @@ export default function KnowThyself() {
     return(
         <div style={{textAlign:'center'}}>
             <div style={{ padding:'1%', color:'white', backgroundColor:'rgb(83, 173, 173)', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Select a mirror to see journaling prompts that will guide you through your self discovery. </div>
+            {
+                selectedColor?           
+                <div style={{fontFamily:'khand'}} >
+                    <Divider/>
+                Scroll down for the prompts
+                <Divider/>
+                </div> :
+                null
+            }
            <div style={{    backgroundColor: 'blanchedalmond'}}>
             <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%', flexWrap:'wrap'}}>
             {makeCircles()}

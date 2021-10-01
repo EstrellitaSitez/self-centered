@@ -1,9 +1,25 @@
 .medText{
     display: block;
     position: absolute;
-    margin-top: 45%;
-    animation: fadeIn linear 2s;
+    margin-top: 45%; 
   }
+
+.animateSpan {
+    animation: fadeIn linear 2s;
+}
+
+.container{
+    text-align: center;
+    position: relative;
+}
+
+.dettachmentText{
+    padding-bottom: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Rajdhani';
+}
 
   .dettachment{
     /* min-height: auto; */
@@ -13,13 +29,15 @@
     padding-bottom: 100%;
     text-align: center;
     display: flex;
+    position:absolute;
     justify-content: center;
     font-family: 'Rajdhani';
-    animation: throb 15s infinite;
-    -moz-animation:  throb 15s infinite;    /* Firefox */
-    -webkit-animation:  throb 15s infinite; /* Safari and Chrome */
-    -o-animation:  throb 15s infinite;    /* Opera */
-    -ms-animation:  throb 15s infinite; 
+    animation: fadeInAndOut 20s infinite;
+    -moz-animation:  fadeInAndOut 20s infinite;    /* Firefox */
+    -webkit-animation:  fadeInAndOut 20s infinite; /* Safari and Chrome */
+    -o-animation:  fadeInAndOut 20s infinite;    /* Opera */
+    -ms-animation:  fadeInAndOut 20s infinite; 
+  
     
 }
 
@@ -30,262 +48,72 @@
     100% {opacity:1;}
   }
 
-
-  @keyframes throb {
-      0% {
-        height: 100%;
-        width: 100%
-      }
-      10% {
-          height: 90%;
-          width:90%;
-          background-color:'teal'
-      }
-      20% {
-          height: 80%;
-          width: 80%
-      }
-      30% {
-          height: 70%;
-          width: 70%;
-          background-color:'teal'
-      }
-      40% {
-          height:60%;
-          width: 60%
-      }
-      50% {
-         height: 50%;
-         width: 50%
-      }
-      60% {
-          height: 60%;
-          width: 60%
-      }
-      70% {
-          height:70%;
-          width: 70%
-      }
-      80% {
-          height: 80%;
-          width: 80%
-      }
-      90% {
-          height:90%; 
-          width: 90%
-      }
-      100% {
-          height: 100%;
-          width: 100%
-      }
-  }
-
-
-
-  @keyframes fadeIn {
+  @keyframes fadeInAndOut {
     0% {opacity:0;}
-    50% {opacity:0.5;}
-    100% {opacity:1;}
+    10%{opacity: .2;}
+    20%{opacity: .4;}
+    30%{opacity: .6;}
+    40%{opacity: .8;}
+    50% {opacity:1;}
+    60%{opacity: .8;}
+    70%{opacity: .6;}
+    80%{opacity: .4;}
+    90%{opacity: .2;}
+    100% {opacity:0;}
   }
 
+  @-webkit-keyframes fadeInAndOut {
+    0% {opacity:0;}
+    10%{opacity: .2;}
+    20%{opacity: .4;}
+    30%{opacity: .6;}
+    40%{opacity: .8;}
+    50% {opacity:1;}
+    60%{opacity: .8;}
+    70%{opacity: .6;}
+    80%{opacity: .4;}
+    90%{opacity: .2;}
+    100% {opacity:0;}
+  } 
 
-  @-moz-keyframes throb {
-      0% {
-        height: 100%;
-        width: 100%
-      }
-      10% {
-          height: 90%;
-          width:90%;
-          background-color:'teal'
-      }
-      20% {
-          height: 80%;
-          width: 80%
-      }
-      30% {
-          height: 70%;
-          width: 70%;
-          background-color:'teal'
-      }
-      40% {
-          height:60%;
-          width: 60%
-      }
-      50% {
-         height: 50%;
-         width: 50%
-      }
-      60% {
-          height: 60%;
-          width: 60%
-      }
-      70% {
-          height:70%;
-          width: 70%
-      }
-      80% {
-          height: 80%;
-          width: 80%
-      }
-      90% {
-          height:90%; 
-          width: 90%
-      }
-      100% {
-          height: 100%;
-          width: 100%
-      }
-  }
+  @-moz-keyframes fadeInAndOut {
+    0% {opacity:0;}
+    10%{opacity: .2;}
+    20%{opacity: .4;}
+    30%{opacity: .6;}
+    40%{opacity: .8;}
+    50% {opacity:1;}
+    60%{opacity: .8;}
+    70%{opacity: .6;}
+    80%{opacity: .4;}
+    90%{opacity: .2;}
+    100% {opacity:0;}
+  } 
 
+  @-ms-keyframes fadeInAndOut {
+    0% {opacity:0;}
+    10%{opacity: .2;}
+    20%{opacity: .4;}
+    30%{opacity: .6;}
+    40%{opacity: .8;}
+    50% {opacity:1;}
+    60%{opacity: .8;}
+    70%{opacity: .6;}
+    80%{opacity: .4;}
+    90%{opacity: .2;}
+    100% {opacity:0;}
+  } 
 
-
-  @-webkit-keyframes throb {
-    0% {
-      height: 100%;
-      width: 100%
-    }
-    10% {
-        height: 90%;
-        width:90%;
-        background-color:'teal'
-    }
-    20% {
-        height: 80%;
-        width: 80%
-    }
-    30% {
-        height: 70%;
-        width: 70%;
-        background-color:'teal'
-    }
-    40% {
-        height:60%;
-        width: 60%
-    }
-    50% {
-       height: 50%;
-       width: 50%
-    }
-    60% {
-        height: 60%;
-        width: 60%
-    }
-    70% {
-        height:70%;
-        width: 70%
-    }
-    80% {
-        height: 80%;
-        width: 80%
-    }
-    90% {
-        height:90%; 
-        width: 90%
-    }
-    100% {
-        height: 100%;
-        width: 100%
-    }
-}
-
-
-@-o-keyframes throb {
-    0% {
-      height: 100%;
-      width: 100%
-    }
-    10% {
-        height: 90%;
-        width:90%;
-        background-color:'teal'
-    }
-    20% {
-        height: 80%;
-        width: 80%
-    }
-    30% {
-        height: 70%;
-        width: 70%;
-        background-color:'teal'
-    }
-    40% {
-        height:60%;
-        width: 60%
-    }
-    50% {
-       height: 50%;
-       width: 50%
-    }
-    60% {
-        height: 60%;
-        width: 60%
-    }
-    70% {
-        height:70%;
-        width: 70%
-    }
-    80% {
-        height: 80%;
-        width: 80%
-    }
-    90% {
-        height:90%; 
-        width: 90%
-    }
-    100% {
-        height: 100%;
-        width: 100%
-    }
-}
-
-
-@-ms-keyframes throb {
-    0% {
-      height: 100%;
-      width: 100%
-    }
-    10% {
-        height: 90%;
-        width:90%;
-        background-color:'teal'
-    }
-    20% {
-        height: 80%;
-        width: 80%
-    }
-    30% {
-        height: 70%;
-        width: 70%;
-        background-color:'teal'
-    }
-    40% {
-        height:60%;
-        width: 60%
-    }
-    50% {
-       height: 50%;
-       width: 50%
-    }
-    60% {
-        height: 60%;
-        width: 60%
-    }
-    70% {
-        height:70%;
-        width: 70%
-    }
-    80% {
-        height: 80%;
-        width: 80%
-    }
-    90% {
-        height:90%; 
-        width: 90%
-    }
-    100% {
-        height: 100%;
-        width: 100%
-    }
-}
-
+  @-o-keyframes fadeInAndOut {
+    0% {opacity:0;}
+    10%{opacity: .2;}
+    20%{opacity: .4;}
+    30%{opacity: .6;}
+    40%{opacity: .8;}
+    50% {opacity:1;}
+    60%{opacity: .8;}
+    70%{opacity: .6;}
+    80%{opacity: .4;}
+    90%{opacity: .2;}
+    100% {opacity:0;}
+  } 
