@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import VisualizationMeditation from './Meditations/VisualizationMeditation';
 import GroundingMeditation from './Meditations/GroundingMeditation';
 import DettachmentMeditation from './Meditations/DettachmentMeditation';
+import MeditationNav from './Meditations/MeditationNav';
 
 export default function MeditationContainer(){
     
@@ -13,15 +14,15 @@ export default function MeditationContainer(){
 
     switch (name) {
         case 'GROUNDING':
-            return <GroundingMeditation/>
+            return <div> <MeditationNav/><GroundingMeditation/></div>
             break;
     
         case 'DETTACHMENT':
-            return <DettachmentMeditation/>
+            return <div> <MeditationNav/><DettachmentMeditation/></div>
             break;    
 
         case 'VISUALIZATION':
-            return <VisualizationMeditation/>
+            return <div> <MeditationNav/><VisualizationMeditation/></div>
             break;  
 
         default:

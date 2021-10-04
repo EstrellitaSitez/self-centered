@@ -1,0 +1,63 @@
+.road{
+    position: relative;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    transform:
+        translateY(-20px)
+        perspective(1000px)
+        rotateX(50deg)
+        translateX(5px);
+        /* rotate(90deg); */
+    transform-style: preserve-3d;
+    height: 100vh;
+    /* background-color: black; */
+}
+
+
+/* .road::after {
+	content: '';
+	display: flex;
+	position: absolute;
+	top: calc((100% - 16px) / 2);
+	left: 5%;
+	width: 90%;
+	height: 16px;
+	background-image: linear-gradient(to right, #FFF 0%, #FFF 70%, #333 70%, #333 100%);
+	background-size: 60px 100%;
+	animation: animate-road linear 10s infinite;
+} */
+
+
+.roadLines{
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    transform:  perspective(1000px);
+    transform-style: preserve-3d;
+    transform: translateY(-50px);
+    background-size:100vh;
+    overflow: none;
+    animation: animate-road 10s linear infinite;
+}
+
+
+@keyframes animate-road {
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(50%);
+    }
+}
+  
+
+
+
+.roadLine1{  
+    width:3vw;
+    height:15vh;
+    background-color: black;
+    margin-bottom: 5em;
+
+}

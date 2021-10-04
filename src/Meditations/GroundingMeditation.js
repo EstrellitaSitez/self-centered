@@ -3,6 +3,7 @@ import { isMobile } from 'react-device-detect'
 import './GroundingMeditation.css'
 
 
+
 export default function GroundingMeditation(){
   
 

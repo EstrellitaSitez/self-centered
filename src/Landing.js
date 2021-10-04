@@ -75,13 +75,29 @@ export default function Landing() {
         <div style={parentDivStyle}>
         <div id='action'>  
           <div style={divStyle}>
-          <img src={knowThyself} style={imageStyle} alt='pink bird staring into water' />
+          <img src={knowThyself} style={imageStyle} alt='alien circle' />
           <div style={divStyle2}>
             <div style={divStyle3}>
             <p style={pStyle}>
              This module consists of prompts that will help you explore how your emotions guide your behavior. Let's go beneath the surface.
             </p>
             <a href='/know-thyself' > Know Thyself ➩</a>
+            </div>
+          </div>
+        </div>
+          </div>
+        </div>
+
+        <div style={parentDivStyle}>
+        <div id='action'>    
+          <div style={divStyle}>
+          <img src={meditation} style={imageStyle} alt='meditation' />
+          <div style={divStyle2}>
+            <div style={divStyle3}>
+            <p style={pStyle}>
+              It's very easy to get swept up by our mind and all its passing thoughts. These exercises are meant to deepen your awareness so that you can exert more control of your mind. Not the other way around.
+            </p>
+            <a href='/meditation' > Meditations ➩</a>
             </div>
           </div>
         </div>
@@ -104,21 +120,6 @@ export default function Landing() {
           </div>
         </div>
 
-        <div style={parentDivStyle}>
-        <div id='action'>    
-          <div style={divStyle}>
-          <img src={meditation} style={imageStyle} alt='hand pretending to grab sun' />
-          <div style={divStyle2}>
-            <div style={divStyle3}>
-            <p style={pStyle}>
-              It's very easy to get swept up by our mind and all its passing thoughts. These exercises are meant to deepen your awareness so that you can exert more control of your mind. Not the other way around.
-            </p>
-            <a href='/meditation' > Meditations ➩</a>
-            </div>
-          </div>
-        </div>
-          </div>
-        </div>
 
       </Carousel>
       //  </div>

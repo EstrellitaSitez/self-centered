@@ -1,9 +1,34 @@
-import React, { useEffect, useState } from 'react';
-import { isMobile } from 'react-device-detect';
+import { Button } from 'antd';
+import React, {useState} from 'react';
+
+import DettachmentGame from './DettachmentGame';
 
 
 export default function DettachmentMeditation(){
 
+    const [started, start] = useState(false)
+
+    const containerDivStyle={
+        marginLeft:'6em',
+        marginRight:'6em',
+        textAlign:'center'
+    }
+
+      
+
+    return(
+        <div style={containerDivStyle}>
+            {
+               started? <DettachmentGame/> : 
+               <div>
+                   <p>
+                      Take your mind on a walk. Much like a puppy, your mind will get distracted and try to pull the leash (your focus) in a different direction. The goal here is to notice <i>what</i> your mind is getting distracted by. Watch out for any patterns in these distractions.
+                   </p>
+                   <Button type='primary' onClick={()=> start(true)}>Start Walk</Button>
+                </div>
+            }
+        </div>
+    )
     
 }
 
