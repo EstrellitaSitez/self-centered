@@ -18,14 +18,14 @@ export default function MeditationPage(){
          {  name: 'Visualization',
             image: visualization,
             imageName:'visualization',
-            desc: `This meditation is beneficial if you're trying to sharpen your mind's eye. Immerse yourself in a different reality. Then, use those same techniques to make the most out of this one ;)`
+            desc: `Sharpen your mind's eye by immersing yourself in a different reality. Then, use those same techniques to make the most out of this one.`
         },
         // game
         {
             name: 'Dettachment',
             image: dettachment,
             imageName:'dettachment',
-            desc:`The goal of this exercise is to view our thoughts from a higher perspective --just one step removed-- so we can deepen our awareness of our mental patterns. ` 
+            desc:`Vew your thoughts from a higher perspective to deepen your awareness of your mental patterns. ` 
         },
         // first take deep breaths. once youve taken deep breaths you hit start
         //spilling cup, imagining it filling you up like youre an empty weird shaped cup. It starts with your toes all the way up to your head. liquifying and dissolving the tension in these body parts 
@@ -35,7 +35,7 @@ export default function MeditationPage(){
             name: 'Grounding',
             image: grounding,
             imageName:'grounding',
-            desc: `Feeling antsy? Brain too cloudy? Take a moment to center yourself with this meditation. Settle into every part of your body -- not just your head.  In just a few minutes, you'll be be feeling much clearer.`
+            desc: `Feeling antsy? Brain too cloudy? Take a moment to center yourself with this meditation.`
         }
 
     ]

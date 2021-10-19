@@ -1,48 +1,92 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { isMobile } from 'react-device-detect'
 
 import './DettachmentGame.css'
 
 export default function DettachmentGame(){
-    const elementRef = useRef()
-//   const makeClones = () => {
-//       return(
-//         <div className='roadLines'>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
-//         <div className="roadLine1"></div>
+ 
 
-//    </div>
-//       )
-//   }
-    const [height, setHeight] = useState(0)
-    
-    useEffect(()=>{
-    
-         const roadRef = elementRef.current
-         setHeight(roadRef.getBoundingClientRect().height)
-         console.log(height)
-    }, [height])
-
-
+// as soon as #original moves a height of .roadline1 height, p
     return(
-        <div className='road'>
-           <div id='orinal' className='roadLines' ref={elementRef}>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
-                <div className="roadLine1"></div>
+            isMobile? 
+            'Please use a desktop' 
+            :
+        
+        <div className='road'> 
+         
+        <ul id='orinal' className='roadLines' >
+         
+       
+   
+        <li>
+             <ul>
+             <li >
+                 <div className="beginnerRoadLine">
+                 </div>
+             </li>
+             </ul>
+         </li>
+        
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>
+        
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>
+        
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>
+                
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>   
+        
+           
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>
+                
+         <li>
+             <ul>
+             <li >
+                 <div className="roadLine1">
+                 </div>
+             </li>
+             </ul>
+         </li>   
+        
 
-           </div>
-    
-        </div>
-    )
+
+        </ul>
+ 
+     </div>
+
+            )
 }

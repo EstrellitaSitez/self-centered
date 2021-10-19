@@ -1,0 +1,24 @@
+audio::-webkit-media-controls-timeline,
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+
+video::-webkit-media-controls-current-time-display{
+    display: none;
+}
+
+video::-webkit-media-controls-time-remaining-display{
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 
 import { Route, Switch, BrowserRouter as Router , useRouteMatch} from 'react-router-dom';
@@ -9,15 +9,18 @@ import MeditationPage from './MeditationPage';
 import MeditationContainer from './MeditationContainer';
 import BuildTarotIntuitionPage from './BuildTarotIntuitionPage';
 
-import Bye from './Bye'
+
 import KnowThyself from './KnowThyself';
 import NeedsInventory from './NeedsInventory';
 import FeelingsInventory from './FeelingsInventory';
+import SpreadPDFTab from './SpreadPDFTab';
 
 
 
 
 function App() {
+
+  const [spread, addToSpread] = useState([])
 
   const hideLoader = () => {
    const loader= document.querySelector('.loaderContainer')
@@ -27,7 +30,14 @@ function App() {
   useEffect(()=>{
     hideLoader()
     window.sessionStorage.setItem('visited', true)
-  })
+  }, [spread])
+
+  const receiveSpread = (obj) => {
+    console.log("SPREAD RECEIVED")
+    addToSpread([...spread, obj])
+  }
+
+  console.log("SPREAD: ", spread.length)
 
   return (
     
@@ -38,8 +48,11 @@ function App() {
     <br></br>
     <Router>
     <Switch>
-      <Route exact={true} path='/bye'><Bye/></Route>
-      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage/></Route>
+    
+      {/* cannot open in new tab or state will be lost */}
+      <Route exact={true} path='/view-cards/spread-preview'><SpreadPDFTab spread={spread}/> </Route>
+    
+      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage receiveSpread={receiveSpread}/></Route>
       <Route exact={true} path={`/meditation/:meditationName`}>
         <MeditationContainer />
       </Route>

@@ -28,12 +28,9 @@ box-shadow: inset 0 0 10px grey
     transform-style: preserve-3d;
 }
 
-#tarotContent {
-
-}
 
 
-#tarotCard:hover #outerbox {
+#tarotCard:hover {
 -webkit-transform: rotateX(20deg);
 transform: rotateX(20deg);
 box-shadow: 0 20px 20px rgba(50,50,50,.2);

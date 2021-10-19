@@ -81,13 +81,15 @@ const CardContainer = React.memo(
             }
     
         }
+
+ 
     
         const makeCards = () => {
             let order= imgSrcs.sort(() => Math.random() - 0.5)
            return (
-            order.map((src)=> {
+            order.map((src, i)=> {
                 return(
-                    <TarotCard selectImage={selectImage} imagePath={src} />
+                    <TarotCard key={i} selectImage={selectImage} imagePath={src} />
                 )
             })
            ) 

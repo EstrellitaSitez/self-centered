@@ -9,17 +9,18 @@
         translateX(5px);
         /* rotate(90deg); */
     transform-style: preserve-3d;
-    height: 100vh;
+    height: 80vh;
+    /* overflow: hidden; */
+
     /* background-color: black; */
 }
-
 
 /* .road::after {
 	content: '';
 	display: flex;
 	position: absolute;
 	top: calc((100% - 16px) / 2);
-	left: 5%;
+	left: 20%;
 	width: 90%;
 	height: 16px;
 	background-image: linear-gradient(to right, #FFF 0%, #FFF 70%, #333 70%, #333 100%);
@@ -30,34 +31,59 @@
 
 .roadLines{
     display: flex;
-
+    overflow: hidden;
+    height: 80vh;
     flex-direction: column;
     align-items: center;
     transform:  perspective(1000px);
     transform-style: preserve-3d;
-    transform: translateY(-50px);
-    background-size:100vh;
-    overflow: none;
-    animation: animate-road 10s linear infinite;
+    margin: 0;
+    padding: 0;
+    transform: translateY(50px);
+    /* background-size:50vh; */
+    -webkit-animation: scrollDown 2s linear infinite normal;
+    animation: scrollDown 2s linear infinite normal;
+
 }
 
 
-@keyframes animate-road {
-    0% {
-        transform: translateY(-50%);
+@-webkit-keyframes scrollDown {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
     }
-    100% {
-        transform: translateY(50%);
+    to {
+      -webkit-transform: translateY(21%);
+              transform: translateY(21%);
     }
-}
+  }
   
-
-
+  @keyframes scrollDown {
+    from {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    to {
+      -webkit-transform: translateY(21%);
+              transform: translateY(21%);
+    }
+  }
 
 .roadLine1{  
     width:3vw;
-    height:15vh;
+    height:10vh;
     background-color: black;
     margin-bottom: 5em;
 
+}
+
+.beginnerRoadLine{
+  width:3vw;
+  height:7vh;
+  background-color: black;
+  margin-bottom: 5em;
+}
+
+ul li{
+    list-style: none;
 }

@@ -1,15 +1,23 @@
 import React, { useCallback, useState } from 'react';
+import { Button } from 'antd';
+
 import CardContainer from './CardContainer';
 import ViewSpecific from './ViewSpecific';
 import CardViewModal from './CardViewModal';
 import './Note.css'
+import TarotQuestionPopOver from './TarotQuestionPopOver';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import SpreadPDFTab from './SpreadPDFTab';
 
+// show all cards switch button
+//shuffled or categorized swich button
 
-
-export default function BuildTarotIntuitionPage() {
+export default function BuildTarotIntuitionPage(props) {
 
     const [selectedImage, selectTheImage] = useState({})
-   
+    // Take in tarotCard object which has the image, and notes
+    const [spreadCount, addToSpreadCount] = useState(0)
+
     // we want card container to shuffle once the image is UNSELECTED, nottt when the image is selected 
 
     // cardsHolder labels
@@ -19,10 +27,23 @@ export default function BuildTarotIntuitionPage() {
     //this variable will receive an image obj passed up from card container
     const unselectImage = () => {
         selectTheImage({})
-   
     }
 
+    const addToSpread = (imageName, imageSRC, notes) => {
+        let tarotOb = {
+            imageName: imageName,
+            imageSrc: imageSRC,
+            notes: notes
+        }
+
+        props.receiveSpread(tarotOb)
+        addToSpreadCount(spreadCount+1)
+    }
     
+    // open in tab
+    const openPDFPreview = () => {
+        window.open('/view-cards/spread-preview')
+    }
 
 
     return(
@@ -31,40 +52,77 @@ export default function BuildTarotIntuitionPage() {
      
             
             }}>
-
+            
         <div style={{
             textAlign:'center',
             backgroundColor:'rgb(83, 173, 173)',
-            padding: '2em'
+            padding: '2em',
+            marginLeft: '3vh',
+            marginRight: '3vh',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center'
             }}>
-                <p>
-                 <i>"If you don't stand for something, you'll fall for everything"</i> --Alexander Hamilton </p>
-                <p>
-                 We must strengthen our sense self so that we can have a grasp on who we are, regardless of who this world tells us we should be. In the tarot cards below, we will see situations that live in our minds rent free, yet charge us an unexpeted amount of emotional labor. In combination with the Know Thyself and Meditation modules, we will learn how our perception of our circumstances guides our physical and emotional responses. 
+                <div>
+                <p 
+                style={{
+                    marginLeft:'3em',
+                    marginRight:'3em'
+                }}
+                >
+                We will be using the cards below as a sort of Rorschach test. 
+                <br/>
                 </p>
-            <p>
-                Click on the cards that grab your attention and take a look at the guiding questions.
-            </p>
+                
+                <b><TarotQuestionPopOver/></b>
 
-            <p id='note' style={{ backgroundColor:'rgb(83, 173, 173)'}}> <a style={{color:'black', fontWeight:'bold'}} href='https://c.tenor.com/tAkRmpf8yTAAAAAC/whats-was-the-reason.gif'> 
-            Remember that whatever comes to mind when you look at these cards, comes to mind for a reason. 
-            </a></p> 
+                <p style={{paddingBottom:'1%'}}> 
+                <b>Click</b> on a card that grabs your attention to flip it over. <b>Click</b> on it again to record your observations. The box to the right represents how many cards you've recorded observations for. <b>Click the box to download your observations into a PDF.</b>
+                <br/>
+                </p>
+               
+               <p>
+               <i style={{color:'black'}}> Remember that whatever comes to mind when you look at these cards, comes to mind for a reason.</i>   This is all about <i>your</i> interpretation. Do <i>not</i> talk yourself out of <i>your</i> observations.
+                    <b>
+                        If you refresh the page, your observations will be erased.
+                    </b>
+                </p>
+                </div>
 
-            <p style={{color:'black', fontStyle:'oblique'}}>This is all about <b>your</b> interpretation. Do <b>not</b> talk yourself out of <b>your</b> observations. There's NO right or wrong. <b>Just what you feel.</b></p>
+                
+
+                {/* <div style={{height:'100%', padding:'2%'}}> */}
+                <div 
+                onClick = {()=> openPDFPreview()}
+                style={{backgroundColor:'white', color:'teal', height:'100%', width: '8%', fontSize:'100%', padding:'2%', cursor:'pointer', boxShadow:'8px 5px 5px grey'}}
+                >
+                   <b> {spreadCount} </b>
+                </div>
+       
+            </div>  
+
+         
+
+        
 
 {/* card container will get passed one prop: the name of the container. Using that name, cardContainer will fetch the cards its gotta fetch */}
-        </div> 
-
+       
+      
        
         <div>
         <h4 style={{fontFamily:'Khand', color:'cadetblue', paddingTop:'2em'}}>Major Arcana</h4>
         <p style = {{color:'grey'}}>Think of the Major Arcana cards as character cards. The symbols that attracts your attention describes the main character in your story. How does this character feel? What is it doing? How does it see the world? </p>
             <div style={{backgroundColor:'rgb(253, 246, 236)'}}>
-            <CardContainer selectImage={  useCallback(
-                 (img)=>{
-                 selectTheImage(img)
-                }, []
-                )} name='trumps' key={1} />
+            <CardContainer 
+                selectImage={  useCallback(
+                    (img)=>{
+                        selectTheImage(img)
+                     }, []
+                 )} 
+                 name='trumps' 
+                 key={1} 
+                 />
             </div>
         </div>    
 
@@ -74,11 +132,15 @@ export default function BuildTarotIntuitionPage() {
             <div style={{backgroundColor:'rgb(253, 246, 236)'}}>
             {
                 minorArcanas.map((name, i)=> {
-                    return <CardContainer  selectImage={  useCallback(
-                        (img)=>{
-                            selectTheImage(img)
-                        }, []
-                    )} name={name} key={i}/>
+                    return <CardContainer  
+                                selectImage={  useCallback(
+                                    (img)=>{
+                                    selectTheImage(img)
+                                    }, []
+                                 )} 
+                                name={name} 
+                                key={i}
+                                />
                 })
             }
             </div>
@@ -86,10 +148,11 @@ export default function BuildTarotIntuitionPage() {
         <ViewSpecific/>
 
         {
-            (selectedImage.source)? <CardViewModal unselectImage={
+            (selectedImage.source)? <CardViewModal addToSpread={addToSpread} unselectImage={
             unselectImage } image={selectedImage}/> : ''
         }
-            
+
+   
          </div>
          
     )

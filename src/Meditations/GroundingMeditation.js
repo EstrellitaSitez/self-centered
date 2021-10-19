@@ -1,6 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { isMobile } from 'react-device-detect'
+import {SoundOutlined} from '@ant-design/icons'
+
+import singingBowl from '../Assets/MeditationSounds/singingBowl.wav'
 import './GroundingMeditation.css'
+import SourcePopOver from './SourcePopOver'
 
 
 
@@ -9,6 +13,7 @@ export default function GroundingMeditation(){
 
     const [spanDisplay, setDisplay] = useState('block')
     const [seconds, setSeconds] = useState(300)
+    const [audioEnabled, enableAudio] = useState(false)
 
  
    
@@ -33,11 +38,28 @@ export default function GroundingMeditation(){
     let sec = seconds%60
     let min = seconds/60
 
+    const audioPopOver =  <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
+
 
     return (
         <div className='container' >
         {
-            ((!isMobile))? <p style={{color:'grey'}}>(scroll to center of circle)</p> : ''
+            ((!isMobile))? <p style={{color:'gainsboro'}}>(scroll to center of circle)</p> : ''
+        }
+         
+         <SoundOutlined onClick={()=>enableAudio(!audioEnabled)}/>
+         <br/>
+        
+        {
+           (audioEnabled)? 
+               <div>
+                  <audio autoPlay loop>
+                     <source src={singingBowl} type='audio/wav'></source>
+                  </audio>
+              </div>
+              :
+              null
+
         }
        <span style={{color:'teal', fontFamily:'Khand'}}>Time: {Math.round(min)}m:{Math.round(sec)}s</span>
        <div className='dettachment'>
@@ -179,6 +201,9 @@ export default function GroundingMeditation(){
              </span>
 
 
+        </div>
+        <div style={{marginTop: isMobile? '20%' : 0}}>
+        <SourcePopOver title={audioPopOver} buttonText='Audio' />
         </div>
         </div>
     )

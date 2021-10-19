@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import ShadowWorkQuestions from './ShadowWorkQuestions'
-import ViewNeedsandFeels from './ViewNeedsandFeels'
 import { PDFDownloadLink} from '@react-pdf/renderer';
-import { Divider, Spin } from 'antd';
+import { Spin } from 'antd';
+import './Note.css'
 import './KnowThyself.css'
 
 import MyDocument from './MyDocument'
+import { isMobile } from 'react-device-detect';
 
 export default function KnowThyself() {
 
-  
+    const [opacity, setOpacity] = useState(1)
    
     const colors = [
         {background: 'violet', textColor:'white'},
@@ -66,7 +67,7 @@ export default function KnowThyself() {
                         'What is an embarrasing memory that I have? Why is it embarrassing?',
                         'What version of myself would I absolutely adore?',
                         'What would somebody who was in love with me say about me?',
-                        'Where in my life do I hold a victim mentality? In what ways do I actually have power in this situation?',
+                        'What area of my life feels chaotic? What are the things I can control?',
                         'When have I acted in ways that did not feel true to who I am? Do my actions align with my values?',
                         'What brings me joy? What can I do to cultivate more joy in my daily life?',
                         'In what ways do I empower myself? In what ways do I strive to empower others?',
@@ -157,16 +158,19 @@ export default function KnowThyself() {
         selectQuestion([...selectedQuestions, question])
        }
        else if (selectedQuestions.length ===3){
-        (alert(`Woah there, Tiger. Focus on the three questions you already have so that you can get the most out of this exercise. Don't spread yourself too thin!`))
+        (alert(`Focus on the three questions you already have so that you can get the most out of this exercise. Don't spread yourself too thin!`))
         }
     }
+
+    
     
     const makeCircles = () => {
         return colors.map(
             (color, i) => {
                 return (
-                    <div style={{border:'1em double', borderRadius:'50%', borderColor: color.background}}
+                    <div key={i} style={{border:'1em double', borderRadius:'50%', borderColor: color.background}}
                          onClick={()=> {
+                        setOpacity(1)
                         selectColor(color) }} >
                         <div id='innerCircle' key={i}> </div> 
                     </div>
@@ -189,21 +193,17 @@ export default function KnowThyself() {
 
     return(
         <div style={{textAlign:'center'}}>
-            <div style={{ padding:'1%', color:'white', backgroundColor:'rgb(83, 173, 173)', fontFamily:'khand'}}> <b>Who are you?</b> <br/>Select a mirror to see journaling prompts that will guide you through your self discovery. </div>
-            {
-                selectedColor?           
-                <div style={{fontFamily:'khand'}} >
-                    <Divider/>
-                Scroll down for the prompts
-                <Divider/>
-                </div> :
-                null
-            }
+            <div style={{ padding:'1%',  marginBottom: '2%',color:'white', fontSize:'large', backgroundColor:'black', fontFamily:'khand'}}> <i>Who</i>  are you?<br/> <b>Select a mirror</b>  to see journaling prompts that will guide you through your self discovery. </div>
+      
            <div style={{    backgroundColor: 'blanchedalmond'}}>
+     
             <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%', flexWrap:'wrap'}}>
-            {makeCircles()}
-            </div>
 
+            {makeCircles()}
+
+      
+ 
+            </div>
             {
                 selectedQuestions.length>0? 
                      <div style={{margin:'1%'}}> 
@@ -211,7 +211,7 @@ export default function KnowThyself() {
                         You have selected <b>{selectedQuestions.length}</b> questions. 
                         </div>
                         <br/>
-                        <PDFDownloadLink document={<MyDocument quote={ref.current?.innerText} questions={selectedQuestions} />} fileName="Estrellita-Tarot-Know-Thyself.pdf">
+                        <PDFDownloadLink document={<MyDocument quote={ref.current?.innerText} questions={selectedQuestions} />} fileName="Self-Centered-Know-Yourself.pdf">
                          {({ blob, url, loading, error }) =>
                         loading ? <Spin/> : <span style={{color:'white', borderRadius:'20%', backgroundColor:'black', padding:'1%', maxWidth:'10em', textAlign:'center'}}>Done</span>
                             }
@@ -221,17 +221,36 @@ export default function KnowThyself() {
             {
                 ((displayedQuestions.length>0))? <ShadowWorkQuestions questions={displayedQuestions} selectedQuestions={selectedQuestions} addToQuestions={addToQuestions}  color={selectedColor}/> : null
             }
-
+   
             <div>
-            < ViewNeedsandFeels/>
             </div>
-            <p ref={ref} style={{color:'Teal', marginTop:'5%'}}>
-                    "To live in the world without becoming <br/>
-                         aware of the meaning of the world is like<br/>
-                         wandering about in a great library <br/>
-                         without touching the books."
-                    </p>
+            <p ref={ref} style={{color:'Teal', padding:'3%', fontStyle:'sans-serif'}}>
+                   
+               
+                
+                     “Knowing yourself is the beginning of all wisdom.” 
+                  
+                </p>
+                
+                
             </div>
+            <div id='footer'>
+            {
+                (selectedColor && isMobile)?    
+                   
+                <p id='note' style={{opacity:opacity}}>
+                   <a href='#ShadowWorkQuestions' onClick={()=> setOpacity(0.3)}> Prompts ⇩</a> 
+                </p>
+                :
+                null
+            } 
+             </div>
         </div>
     )
 }
+
+/**
+ * 
+ * Refer to Needs and Feelings Inventory to explore common themes within your answers to the selected questions.
+ * 
+ */

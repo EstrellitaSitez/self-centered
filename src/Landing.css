@@ -44,23 +44,29 @@
     color:teal
 }
 
-.ant-carousel .slick-prev, .ant-carousel .slick-next{
+.ant-carousel .slick-next{
     color:beige;
     font-size: 1em;
-    position: absolute;
+    position:absolute;
     width:fit-content;
     opacity: 0.4;
-    
+    float: right;
+    padding-right: 10%;
 }
 
 
-.ant-carousel .slick-next {
- right: 0;
- padding-right: 8%;
-}
 
 .ant-carousel .slick-prev{
-    left:0;
-    padding-left: 8%;
+ display:none
+}
+
+.ant-carousel .slick-next:hover{
+    color: black;
+}
+
+.ant-carousel .slick-next:focus {
+    color: beige;
+    background: transparent;
+    outline: none;
 }
 

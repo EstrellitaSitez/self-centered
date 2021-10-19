@@ -1,0 +1,17 @@
+Pictures on the worksheet
+Maybe auto-put in the date 
+
+Include the self reflection questions on hover over the tarrot cards. Dim the colors of the tarot cards. On mobile site just create a pop up and have an X to exit out of questions
+
+Make call to actions bigger and bolded "select"
+
+in the home page carousel, include something for the needs and feelings inventory
+
+
+On  Mobile: 
+-- let users write in the shadow work prompts form-style
+On Desktop:
+-- worksheet
+
+orrr option whether to download it like a worksheet 
+or 

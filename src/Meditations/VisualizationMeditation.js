@@ -1,17 +1,32 @@
 import React, { useState }  from 'react'
-import {Card} from 'antd'
-import { PlaySquareOutlined} from '@ant-design/icons'
+import {Card, Tooltip} from 'antd'
+import { PlaySquareOutlined, SoundOutlined, StopOutlined} from '@ant-design/icons'
 import Meta from 'antd/lib/card/Meta'
 
 import VisualizationModal from './VisualizationModal'
+
 import orbitingEarth from '../Assets/MeditationVideos/aroundTheWorld.mp4'
 import gardenRain from '../Assets/MeditationVideos/gardenRain.mp4'
 import rainyWindow from '../Assets/MeditationVideos/rainyWindow.mp4'
-import waterRipples from  '../Assets/MeditationVideos/waterRipples.mp4'
+
+import brownPinkWhiteNoise from '../Assets/MeditationSounds/brownPinkWhiteNoise.wav'
+import CoffeeHouseNoisesRain from '../Assets/MeditationSounds/CoffeeHouseNoisesRain.wav'
+import peopleAround from '../Assets/MeditationSounds/peopleAround.wav'
+import RainSounds from '../Assets/MeditationSounds/RainSounds.wav'
+import treeHeatWaveBird from '../Assets/MeditationSounds/treeHeatWaveBird.wav'
+import Waves from '../Assets/MeditationSounds/Waves.wav'
+
+
+import './VisualizationMeditation.css'
+import AudioSourcePopOver from './SourcePopOver'
+import SourcePopOver from './SourcePopOver'
 
 export default function VisualizationMeditation(){
 
     const [currentUrl, selectURL] = useState(null)
+    const [soundSelected, selectSound] = useState(null)
+
+    // Add white noise to all the videos
 
     const visualizations = [
         {   title:'Orbiting Earth',
@@ -24,10 +39,27 @@ export default function VisualizationMeditation(){
         {
             title: 'Rainy Window',
             video: rainyWindow
+        }
+    ]
+
+    const sounds = [
+        {
+            audio: brownPinkWhiteNoise
         },
         {
-            title:'Water Ripples',
-            video: waterRipples
+            audio: CoffeeHouseNoisesRain
+        },
+        {
+            audio: peopleAround
+        },
+        {
+            audio: RainSounds
+        }, 
+        {
+            audio: treeHeatWaveBird
+        },
+        {
+            audio: Waves
         }
     ]
 
@@ -77,22 +109,88 @@ export default function VisualizationMeditation(){
         )
     }
 
+    const videoPopOver = <div> Videos provided by <a href='https://mixkit.co/free-video-backgrounds/'> MixKit </a> under a <a href='https://mixkit.co/license/#videoFree'></a>Stock Video Free License</div>
+
+    const audioPopOver =  <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
+
+
+
     return (
         <div>
+            {
+                (soundSelected)?
+                <audio autoPlay loop>
+                <source src={soundSelected.audio} type='audio/wav'></source>
+             </audio>
+                :
+                null
+            }
             <div style={{
                 textAlign:'center',
                 marginLeft:'25%',
                 marginRight:'25%'
             }}>
-                Pick a landscape below. As you watch the video, think about how you would feel in this landscape. Stretch your imagination. What are you doing there? Which senses are the most active? What emotions are brought up? How do you feel?
+                <div>
+                Pick a landscape below. As you immerse yourself in the video/sound, think about how you would feel in this landscape. Stretch your imagination. Where are you? What are you doing there? Which senses are the most active? What emotions are brought up? How do you feel?
+                </div>
+                <br/>
+                <Tooltip
+                    color='pink'
+                    autoAdjustOverflow
+                    title={<div>You can overlay a sound with a video</div>}
+                    overlayInnerStyle={{color:'whitesmoke'}}
+      >
+
+                         <p style={{
+                            color:'black',
+                            display: 'inline',
+                            cursor: 'pointer',
+                            fontStyle: 'oblique'}} 
+                            type="text"><b> Tip </b> </p>
+                </Tooltip>
             </div>
+
+            <div style={{margin:'6%'}}>
+                <table >
+                    <tr>
+                    <td colSpan= '7' style={{ backgroundColor:'Gold'}}>
+                    <h6 style={{padding:'1%'}}> Sounds: </h6>
+                    </td>
+                    </tr>
+                
+                    <tr>
+                        
+                        {
+                            sounds.map( (sound) =>{
+                                return(
+                                    <td> 
+                                        <SoundOutlined onClick={()=>selectSound(sound)} />
+                                    </td>
+                                )
+                                })
+                        }
+                        <td>
+                            <StopOutlined onClick={()=>selectSound(null)}/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style={{textAlign:'center'}}>
+                <h5>Videos:</h5>
             {makeCards(visualizations)}
+            </div>
+          
             {
                 currentUrl?
                     <VisualizationModal unselectURL={unselectURL} url={currentUrl}/>
                     :
                     null
             }
+            <p style={{fontSize:'small', bottom:0 }}>
+                <p>Sources:</p>
+                 <SourcePopOver title={audioPopOver} buttonText='Audio' />
+                 <SourcePopOver title={videoPopOver} buttonText='Video' />
+            </p>
         </div>
     )
 }
