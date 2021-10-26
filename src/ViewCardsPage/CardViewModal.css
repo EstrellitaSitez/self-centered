@@ -1,0 +1,31 @@
+.ant-modal-content {
+    background-color: transparent;
+    }
+    
+.rdw-fontfamily-wrapper {
+    display: none;
+}
+
+.rdw-link-wrapper{
+    display: none;
+}
+
+.rdw-embedded-wrapper{
+    display: none;
+}
+
+.rdw-image-wrapper{
+    display: none;
+}
+
+.rdw-remove-wrapper {
+    display: none;
+}
+
+.rdw-text-align-wrapper {
+    display: none;
+}
+
+.rdw-inline-wrapper{
+    display: none;
+}

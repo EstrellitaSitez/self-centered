@@ -1,0 +1,51 @@
+import React from 'react'
+import { PDFViewer } from '@react-pdf/renderer'
+import SpreadPDF from './SpreadPDF'
+
+export default function SpreadPDFTab() {
+
+    //  since its a new tab, the state refreshes
+    const pdfContents = history.state.state
+
+    return(
+        <div>
+            
+            {
+                (pdfContents.length > 0)? 
+
+                <PDFViewer
+                style ={{height:'100vh', width:'100vw'}}
+                width='90%'
+                height='90%'
+                showToolbar
+
+           >
+                    <SpreadPDF contents={pdfContents}/>
+                </PDFViewer> 
+                :
+                <div style ={{textAlign:'center'}}>
+                    There is no preview to show.
+                    </div>
+            }
+                    
+        </div>
+
+    )
+}
+
+        // {
+        // (props.spread.length)?
+        //        <PDFViewer
+        //         style ={{height:'100vh', width:'100vw'}}
+        //         width='90%'
+        //         height='90%'
+        //         showToolbar
+
+        //    >
+        //             <SpreadPDF/>
+        //         </PDFViewer> 
+        //         :
+        //         <div style={{marginTop:'4%', textAlign:'center'}}>
+        //             There is no preview to show
+        //         </div>
+        // }
