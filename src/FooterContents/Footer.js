@@ -17,13 +17,15 @@ const Footer = () => (
                 About
             </a>
             |
-            <a style={anchorStyle} href='https://github.com/EstrellitaSitez/Self-Centered-Shadow-Work'>
-                Code
-            </a>
-            |
             <a style={anchorStyle} href='/feedback'>
                 Feedback
             </a>
+            |
+            <a style={anchorStyle} href='https://github.com/EstrellitaSitez/Self-Centered-Shadow-Work'>
+                Code
+            </a>
+           
+
             </div>
             
     </div>
