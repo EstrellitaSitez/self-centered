@@ -20,10 +20,6 @@ const Footer = () => (
             <a style={anchorStyle} href='/feedback'>
                 Feedback
             </a>
-            |
-            <a style={anchorStyle} href='https://github.com/EstrellitaSitez/Self-Centered-Shadow-Work'>
-                Code
-            </a>
            
 
             </div>
