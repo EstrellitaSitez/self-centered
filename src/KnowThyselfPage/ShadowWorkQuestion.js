@@ -5,12 +5,15 @@ import { isMobile } from 'react-device-detect'
 export default function ShadowWorkQuestion (props)  {
 
     const passQuestionShadowWorkQuestions = (e) => {
+        // Need a better way to access the question. When page is translated and the '+' is clicked, an error is thrown because of the button's inner text, line below stops error, but makes translated button hard to click.
+        if (e.target.tagName === 'BUTTON') {
         let question = e.target.previousElementSibling.textContent
         if (props.passQuestionToKnowThyselfContainer(question))
           { 
               e.target.style.backgroundColor = e.target.style.color
             }
        
+        }
         
     }
 

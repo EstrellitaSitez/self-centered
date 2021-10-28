@@ -1,0 +1,13 @@
+.footerLink{
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.title{
+    font-family:'Rajdhani'
+}
+
+#ruminationLink:hover{
+    text-decoration: underline;
+}

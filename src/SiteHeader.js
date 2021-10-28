@@ -1,3 +1,4 @@
+import { BgColorsOutlined } from '@ant-design/icons';
 import { Divider } from 'antd';
 import React from 'react';
 import { isMobile } from 'react-device-detect';
@@ -13,6 +14,7 @@ export default function SiteHeader(){
         }
     }
 
+    
 
     return(
         <div style={{background:'white', fontFamily:'Khand', textAlign:'center', position:'relative', width:widthSH(), paddingTop:'1%', paddingBottom:'0'}}>

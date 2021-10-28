@@ -18,6 +18,7 @@ export default function CardViewForm(props) {
         props.addToSpread(notesHtmlObj)
     }
   
+    // Click won't handle when page translated I think for the same reason in the ShadowWorkQuestions '+' issue.--> its clicking the 'font' tag
     const handleClick = () => {
         addToSpread()
         props.closeModal()

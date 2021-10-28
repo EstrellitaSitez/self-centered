@@ -33,8 +33,7 @@ export default function ShadowWorkQuestions(props) {
            {
                 (props.questions.length>0)? 
                 <div> <Divider/>
-                     <p> Click on the box next to the questions you wish to add to your worksheet. You may add<b> up to three questions </b> total. </p>
-                     <p> Click 'Done' to finalize your worksheet.</p>
+                     <p><b> You may look through all colors. Select up to three questions total.</b></p>
                      Refer to the <a href='/NeedsInventory'  target="_blank"> Needs Inventory⬈ </a> 
                     and the <a href='/FeelingsInventory'  target="_blank"> Feelings Inventory⬈</a> to further understand the roots of your triggers.
                     

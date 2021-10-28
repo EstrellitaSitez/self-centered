@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom';
 import ShadowWorkQuestions from './ShadowWorkQuestions'
 import { PDFDownloadLink} from '@react-pdf/renderer';
-import { Spin } from 'antd';
+import { Spin, Button } from 'antd';
 import '../Note.css'
 import './KnowThyself.css'
 
@@ -25,6 +26,11 @@ export default function KnowThyself() {
     const [selectedQuestions, selectQuestion] = useState([])
     const [selectedColor, selectColor] = useState(null)
     const [displayedQuestions, displayQuestions] = useState([])
+
+    const downloadButtonsStyle ={
+        backgroundColor: 'black'
+    }
+
 
     const whichQuestions = () => {
         let questions = []
@@ -152,6 +158,8 @@ export default function KnowThyself() {
 
     useEffect(() => {whichQuestions()}, [selectedColor])
     
+
+
     const addToQuestions = (question) => {
         let duplicate = selectedQuestions.includes(question)
         if (selectedQuestions.length < 3 && !duplicate ){
@@ -181,9 +189,35 @@ export default function KnowThyself() {
         )
     }
 
-
+  
+    const history = useHistory()
+    const handleFillOut = () => {
+        history.push(
+            '/fill-out-worksheet',
+            selectedQuestions
+        )
+    }
+  
 
     const ref = React.useRef();
+
+    const pdfLink = (
+        <div style={{margin:'1%'}}> 
+        <div style={{marginBottom:'1%'}}>
+        You have selected <b>{selectedQuestions.length}</b> questions. 
+        </div>
+        <br/>
+            <div style={{display:'flex', flexDirection:'column',  alignItems:'center'}}>
+                 <PDFDownloadLink document={<MyDocument quote={ref.current?.innerText} questions={selectedQuestions} />} fileName="Self-Centered-Know-Yourself.pdf">
+                {({ blob, url, loading, error }) =>
+                 loading ? <Spin/> : <Button style={downloadButtonsStyle} type='primary'>Download my worksheet</Button>
+                }
+                </PDFDownloadLink>
+                {/* or
+                <span><Button  onClick={handleFillOut} style={downloadButtonsStyle} type='primary'>Fill it out first</Button></span> */}
+            </div>
+         </div>
+    )
 
 
     return(
@@ -195,36 +229,24 @@ export default function KnowThyself() {
             <div style={{ display: 'flex', justifyContent:'center', paddingTop:'5%', flexWrap:'wrap'}}>
 
             {makeCircles()}
-
-      
- 
+            
             </div>
             {
-                selectedQuestions.length>0? 
-                     <div style={{margin:'1%'}}> 
-                        <div style={{marginBottom:'1%'}}>
-                        You have selected <b>{selectedQuestions.length}</b> questions. 
-                        </div>
-                        <br/>
-                        <PDFDownloadLink document={<MyDocument quote={ref.current?.innerText} questions={selectedQuestions} />} fileName="Self-Centered-Know-Yourself.pdf">
-                         {({ blob, url, loading, error }) =>
-                        loading ? <Spin/> : <span style={{color:'white', borderRadius:'20%', backgroundColor:'black', padding:'1%', maxWidth:'10em', textAlign:'center'}}>Done</span>
-                            }
-                        </PDFDownloadLink> </div>: null
+                selectedQuestions.length>0? pdfLink : null
             }
 
             {
                 ((displayedQuestions.length>0))? <ShadowWorkQuestions questions={displayedQuestions} selectedQuestions={selectedQuestions} addToQuestions={addToQuestions}  color={selectedColor}/> : null
             }
-   
+
+            {
+                selectedQuestions.length>0? pdfLink : null
+            }
             <div>
             </div>
             <p ref={ref} style={{color:'Teal', padding:'3%', fontStyle:'sans-serif'}}>
-                   
-            
                      “The most destructive thing I've ever done is believe someone else's opinion of me.” 
-                  
-                </p>
+            </p>
                 
                 
             </div>
