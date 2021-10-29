@@ -59,10 +59,10 @@ const SpreadPDF = (props) => (
                             <View key={i} style={styles.section}>
                                 <View style={styles.subSection}>
                                     <Text style={styles.sectionTitle}>
-                                         {content.imageName}
+                                         {content.imageName.slice(14)}
                                      </Text>
                                 </View>
-            
+
                         
                             
                                 <View  style={styles.subSection}>

@@ -115,6 +115,7 @@ export default function BuildTarotIntuitionPage(props) {
            <CardContainer 
                selectImage={  useCallback(
                    (img)=>{
+                       
                        selectTheImage(img)
                     }, []
                 )} 
