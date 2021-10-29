@@ -33,7 +33,8 @@ function App() {
   useEffect(()=>{
     hideLoader()
    } )
-
+  
+   const baseUrl= '/self-centered'
   
   return (
     
@@ -45,26 +46,26 @@ function App() {
     <div>
     <Router>
     <Switch>
-      <Route exact={true} path='/fill-out-worksheet'> <OnlineWorksheet/> </Route>
-      <Route exact={true} path='/feedback'><Feedback/> </Route>
-      <Route exact={true} path='/disclaimer'><Disclaimer/></Route>
-      <Route exact={true} path='/about'><About/></Route>
-      <Route exact={true} path='/view-cards/spread-preview'><SpreadPDFTab /> </Route>
+      <Route exact={true} path= {baseUrl+'/fill-out-worksheet'}> <OnlineWorksheet/> </Route>
+      <Route exact={true} path={baseUrl+'/feedback'}><Feedback/> </Route>
+      <Route exact={true} path={baseUrl+'/disclaimer'}><Disclaimer/></Route>
+      <Route exact={true} path={baseUrl+'/about'}><About/></Route>
+      <Route exact={true} path={baseUrl+'/view-cards/spread-preview'}><SpreadPDFTab /> </Route>
     
-      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage/></Route>
-      <Route exact={true} path={`/meditation/:meditationName`}>
+      <Route exact={true} path={baseUrl+'/view-cards'}><BuildTarotIntuitionPage/></Route>
+      <Route exact={true} path={baseUrl+`/meditation/:meditationName`}>
         <MeditationContainer />
       </Route>
-      <Route exact={true} path='/FeelingsInventory'>
+      <Route exact={true} path={baseUrl+'/FeelingsInventory'}>
         <FeelingsInventory/>
       </Route>
-      <Route exact={true} path='/NeedsInventory'><NeedsInventory/></Route>
-      <Route exact={true} path='/know-thyself'><KnowThyself/></Route>
-      <Route exact={true} path="/meditation"><MeditationPage/>
+      <Route exact={true} path={baseUrl+'/NeedsInventory'}><NeedsInventory/></Route>
+      <Route exact={true} path={baseUrl+'/know-thyself'}><KnowThyself/></Route>
+      <Route exact={true} path={baseUrl+"/meditation"}><MeditationPage/>
       </Route>
 
   
-      <Route path="/"><Landing/></Route>
+      <Route path={baseUrl+"/"}><Landing/></Route>
     </Switch>
     </Router>
     </div>
