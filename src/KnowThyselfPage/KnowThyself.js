@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import ShadowWorkQuestions from './ShadowWorkQuestions'
 import { PDFDownloadLink} from '@react-pdf/renderer';
 import { Spin, Button } from 'antd';
@@ -190,13 +190,13 @@ export default function KnowThyself() {
     }
 
   
-    const history = useHistory()
-    const handleFillOut = () => {
-        history.push(
-            '/fill-out-worksheet',
-            selectedQuestions
-        )
-    }
+    // const history = useHistory()
+    // const handleFillOut = () => {
+    //     history.push(
+    //         '/fill-out-worksheet',
+    //         selectedQuestions
+    //     )
+    // }
   
 
     const ref = React.useRef();

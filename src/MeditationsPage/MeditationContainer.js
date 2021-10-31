@@ -25,7 +25,7 @@ export default function MeditationContainer(){
             
 
         default:
-            window.location ='/meditation';
+            window.location = process.env.REACT_APP_BASE_URL+'/meditation';
     }
 
 }

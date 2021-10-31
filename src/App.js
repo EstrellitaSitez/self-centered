@@ -56,10 +56,10 @@ function App() {
       <Route exact={true} path={baseUrl+`/meditation/:meditationName`}>
         <MeditationContainer />
       </Route>
-      <Route exact={true} path={baseUrl+'/FeelingsInventory'}>
+      <Route exact={true} path={baseUrl+'/feelings-inventory'}>
         <FeelingsInventory/>
       </Route>
-      <Route exact={true} path={baseUrl+'/NeedsInventory'}><NeedsInventory/></Route>
+      <Route exact={true} path={baseUrl+'/needs-inventory'}><NeedsInventory/></Route>
       <Route exact={true} path={baseUrl+'/know-thyself'}><KnowThyself/></Route>
       <Route exact={true} path={baseUrl+"/meditation"}><MeditationPage/>
       </Route>

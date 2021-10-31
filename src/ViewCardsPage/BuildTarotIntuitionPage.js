@@ -41,7 +41,7 @@ export default function BuildTarotIntuitionPage(props) {
     // open in tab
     const openPDFPreview = () => {
         history.push(
-            '/view-cards/spread-preview',
+            (process.env.REACT_APP_BASE_URL+'/view-cards/spread-preview'),
             spread
         ) 
     }
