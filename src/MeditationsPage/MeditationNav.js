@@ -9,10 +9,10 @@ export default function MeditationNav(){
         width:'fit-content',
         marginLeft: isMobile? '': '3em'
     }
-
+    const baseUrl = process.env.REACT_APP_BASE_URL
     return(
         <div>
-            <a style={aStyle} href='/Meditation'><LeftOutlined /> </a>
+            <a style={aStyle} href={baseUrl+'/Meditation'}><LeftOutlined /> </a>
         </div>
     )
 }

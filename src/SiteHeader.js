@@ -15,10 +15,10 @@ export default function SiteHeader(){
     }
 
     
-
+    const baseUrl= process.env.REACT_APP_BASE_URL
     return(
         <div style={{background:'white', fontFamily:'Khand', textAlign:'center', position:'relative', width:widthSH(), paddingTop:'1%', paddingBottom:'0'}}>
-            <a href= '/'>
+            <a href= {baseUrl + '/'}>
                <h1 style={{ color: 'black', paddingTop:'1%', height:'100%'}}>
                         S E L F  {isMobile? <br/> : <span>&nbsp;</span>} C E N T E R E D
                     </h1>

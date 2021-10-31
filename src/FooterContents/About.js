@@ -7,7 +7,7 @@ const About = () => (
            About
         </h1>
         <div>
-            <a href='/'><b> Self-Centered </b></a> is a tool for self-exploration.  We constantly <i>react</i> to our circumstances instead of sitting with our emotions and trying to understand them. Life doesn't happen <i>to</i> us. It happens within us and around us-- and sometimes we forget this. This site is meant to help us pause and reevaluate our perspective. 
+            <a href={process.env.REACT_APP_BASE_URL+'/'}><b> Self-Centered </b></a> is a tool for self-exploration.  We constantly <i>react</i> to our circumstances instead of sitting with our emotions and trying to understand them. Life doesn't happen <i>to</i> us. It happens within us and around us-- and sometimes we forget this. This site is meant to help us pause and reevaluate our perspective. 
 
             <p>Think of all the ideas you have about yourself and about your role in the world. Where do they come from? How do they affect your daily actions? Your daily thoughts? How do they shape your experiences? How do they shape <i>you</i>? </p>
 

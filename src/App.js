@@ -34,7 +34,7 @@ function App() {
     hideLoader()
    } )
   
-   const baseUrl= '/self-centered'
+   const baseUrl= process.env.REACT_APP_BASE_URL
   
   return (
     

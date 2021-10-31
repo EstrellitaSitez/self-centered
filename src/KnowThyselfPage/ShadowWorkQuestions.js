@@ -5,7 +5,7 @@ import ShadowWorkQuestion from './ShadowWorkQuestion'
 
 
 export default function ShadowWorkQuestions(props) {
-
+    const baseUrl = process.env.REACT_APP_BASE_URL
 
     const passQuestionToKnowThyselfContainer = (question) => {
       return props.addToQuestions(question)
@@ -34,8 +34,8 @@ export default function ShadowWorkQuestions(props) {
                 (props.questions.length>0)? 
                 <div> <Divider/>
                      <p><b> You may look through all colors. Select up to three questions total.</b></p>
-                     Refer to the <a href='/NeedsInventory'  target="_blank"> Needs Inventory⬈ </a> 
-                    and the <a href='/FeelingsInventory'  target="_blank"> Feelings Inventory⬈</a> to further understand the roots of your triggers.
+                     Refer to the <a href={baseUrl+'/NeedsInventory'}  target="_blank"> Needs Inventory⬈ </a> 
+                    and the <a href={baseUrl+'/FeelingsInventory'}  target="_blank"> Feelings Inventory⬈</a> to further understand the roots of your triggers.
                     
                  <Divider/></div> 
                 : null
