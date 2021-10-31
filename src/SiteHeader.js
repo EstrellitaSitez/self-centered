@@ -25,7 +25,7 @@ export default function SiteHeader(){
             </a>
            
                
-               <p>
+               <p style={{color:'black'}}>
                  <i>“Knowing yourself is the beginning of all wisdom.” </i>
                 </p>
                 <p>— Aristotle</p>
