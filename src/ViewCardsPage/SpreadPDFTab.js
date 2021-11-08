@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { PDFViewer } from '@react-pdf/renderer'
 import SpreadPDF from './SpreadPDF'
 
-export default function SpreadPDFTab() {
+export default function SpreadPDFTab(props) {
 
     //  since its a new tab, the state refreshes
-    const pdfContents = history.state.state
+    const [pdfContents, setPDFContents] = useState(null)
+
+    useEffect(()=>{
+        if (props.spread){
+            setPDFContents(props.spread)
+            console.log("CONTENTSSS", pdfContents)
+        }
+    },[pdfContents])
 
     return(
         <div>
             
             {
-                (pdfContents.length > 0)? 
+                ((pdfContents != null) && (pdfContents.length > 0))? 
 
                 <PDFViewer
                 style ={{height:'100vh', width:'100vw'}}
@@ -19,13 +26,13 @@ export default function SpreadPDFTab() {
                 height='90%'
                 showToolbar
 
-           >
+                    >
                     <SpreadPDF contents={pdfContents}/>
                 </PDFViewer> 
                 :
                 <div style ={{textAlign:'center'}}>
-                    There is no preview to show.
-                    </div>
+                    Ooops! Looks like there's no preview to show.
+                </div>
             }
                     
         </div>

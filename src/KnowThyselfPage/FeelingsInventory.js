@@ -1,6 +1,6 @@
 import { Divider } from 'antd'
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
   
 
 import '../Note.css'
@@ -300,9 +300,9 @@ export default function FeelingsInventory(){
     }
 
 
-    const listFeelings = (feeling) =>{
+    const listFeelings = (feeling, i) =>{
         return (
-            <li style={{listStyle:'none'}}> <span style={{fontFamily:'Rajdhani', fontWeight:'bold', color:'white', }}> {feeling} </span> </li>
+            <li key={i} style={{listStyle:'none'}}> <span style={{fontFamily:'Rajdhani', fontWeight:'bold', color:'white', }}> {feeling} </span> </li>
         )
     }
 
@@ -314,7 +314,7 @@ export default function FeelingsInventory(){
                 <div style={{display:'inline', margin:'5%', backgroundColor:'teal', padding:'3%'}}>
                    <div style={{color:'white', fontFamily:'Rajdhani', fontWeight:'bold'}}>{category}</div> 
                     <Divider style={{backgroundColor:'white'}}/>
-                        {feelings.map((feeling)=>listFeelings(feeling))}
+                        {feelings.map((feeling,i)=>listFeelings(feeling,i))}
                     
 
                 </div>
@@ -323,15 +323,15 @@ export default function FeelingsInventory(){
         return results
     }
 
-    const makeArrows =()=> {
-        let results = []
-        for (let i=0; i<11; i++){
-             results.push(
-                <span>↓</span>
-            )
-        }
-        return results
-    }
+    // const makeArrows =()=> {
+    //     let results = []
+    //     for (let i=0; i<11; i++){
+    //          results.push(
+    //             <span>↓</span>
+    //         )
+    //     }
+    //     return results
+    // }
 
     return(
         <div>
@@ -365,7 +365,6 @@ export default function FeelingsInventory(){
 
             <div id='footer'>
              
-                     <p id='note'>  <Link   to='#unsatisfied'> ...Unsatisfied Needs </Link></p>
 
                    
                

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'antd/dist/antd.css';
 import { Route, Switch} from 'react-router-dom';
 
@@ -24,14 +24,18 @@ function App() {
 
 
   const hideLoader = () => {
+
    const loader= document.querySelector('.loaderContainer')
    loader.style.display ='none'
   }
 
+  const [cardsSpread, setCardsSpread] = useState(null)
+
   useEffect(()=>{
     hideLoader()
-   } )
+   }, [cardsSpread] )
   
+   console.log("SPREAD: ", cardsSpread)
   // Hash history for static sites but since gh pages is forcing us to
   return (
     
@@ -47,9 +51,9 @@ function App() {
       <Route exact={true} path='/feedback'><Feedback/> </Route>
       <Route exact={true} path='/disclaimer'><Disclaimer/></Route>
       <Route exact={true} path='/about'><About/></Route>
-      <Route exact={true} path='/view-cards/spread-preview'><SpreadPDFTab /> </Route>
+      <Route exact={true} path='/view-cards/spread-preview'><SpreadPDFTab spread={cardsSpread}/> </Route>
     
-      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage/></Route>
+      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage setCardsSpread={setCardsSpread}/></Route>
       <Route exact={true} path='/meditation/:meditationName'>
         <MeditationContainer />
       </Route>

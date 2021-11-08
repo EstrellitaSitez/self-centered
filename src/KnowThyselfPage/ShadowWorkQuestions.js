@@ -35,8 +35,8 @@ export default function ShadowWorkQuestions(props) {
                 (props.questions.length>0)? 
                 <div style={{color:'black'}}> <Divider/>
                      <p><b> You may look through all colors. Select up to three questions total.</b></p>
-                     Refer to the   <Link   to='/NeedsInventory'  target="_blank"> Needs Inventory⬈ </Link> 
-                    and the   <Link   to='/FeelingsInventory'  target="_blank"> Feelings Inventory⬈</Link> to further understand the roots of your triggers.
+                     Refer to the   <Link   to='/needs-inventory' > Needs Inventory⬈ </Link> 
+                    and the   <Link   to='/feelings-inventory'  > Feelings Inventory⬈</Link> to further understand the roots of your triggers.
                     
                  <Divider/></div> 
                 : null

@@ -47,7 +47,7 @@ export default function DettachmentMeditation(){
             }
            {
                 started? 
-                <div style={{display:'flex', flexDirection:'column', color:'gainsboro'}}>
+                <div style={{display:'flex', flexDirection:'column', color:'black'}}>
                             <div className='icon' style={iconStyle} >
                             <SoundOutlined onClick={()=>selectSound(!soundSelected)} />
                             </div>

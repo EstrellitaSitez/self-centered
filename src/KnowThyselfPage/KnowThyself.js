@@ -205,7 +205,7 @@ export default function KnowThyself() {
 
     const pdfLink = (
         <div style={{margin:'1%'}}> 
-        <div style={{marginBottom:'1%'}}>
+        <div style={{marginBottom:'1%', color:'black'}}>
         You have selected <b>{selectedQuestions.length}</b> questions. 
         </div>
         <br/>
@@ -257,7 +257,6 @@ export default function KnowThyself() {
                 (selectedColor && isMobile)?    
                    
                 <p id='note' style={{opacity:opacity}}>
-                     <Link   to='#ShadowWorkQuestions' onClick={()=> setOpacity(0.3)}> Prompts ⇩</Link> 
                 </p>
                 :
                 null

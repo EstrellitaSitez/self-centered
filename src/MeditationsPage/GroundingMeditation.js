@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { isMobile } from 'react-device-detect'
-import {SoundOutlined} from '@ant-design/icons'
+import {SoundOutlined, StopOutlined} from '@ant-design/icons'
 import { Link } from 'react-router-dom'
 
 import singingBowl from '../Assets/MeditationSounds/singingBowl.wav'
@@ -47,8 +47,12 @@ export default function GroundingMeditation(){
         {
             ((!isMobile))? <p style={{color:'gainsboro'}}>(scroll to center of circle)</p> : ''
         }
-         
-         <SoundOutlined onClick={()=>enableAudio(!audioEnabled)}/>
+         {
+            audioEnabled?
+               <StopOutlined onClick={()=>enableAudio(!audioEnabled)} />
+            :
+               <SoundOutlined onClick={()=>enableAudio(!audioEnabled)}/>
+         }
          <br/>
         
         {
