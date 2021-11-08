@@ -121,7 +121,7 @@ export default function NeedsInventory () {
 
             <Divider/>
 
-            <div>
+            <div style={{color:'black'}}>
                 When we feel "triggered" by a situation, it might be likely that this event is threatening some our needs. Similarly, when we respond positively to situations or people, it might be likely that they fulfill some of our needs. Review the list below to gain more awareness of where your emotions are coming from. 
             </div>
 
@@ -139,35 +139,35 @@ export default function NeedsInventory () {
                 {listNeeds(meaning)}
                 </div>
 
-            <div class="col-sm">
+            <div class="col-sm" >
 
                     <div class='row'>
-                        <div class="col-sm">
+                        <div class="col-sm"  style={{color:'black'}}>
                         AUTONOMY
                         {listNeeds(autonomy)}
                         </div>
                         
                     </div>
                     <div class='row'>
-                          <div class="col-sm">
+                          <div class="col-sm"  style={{color:'black'}}>
                         PEACE
                         {listNeeds(peace)}
                         </div>
                     </div>
                     <div class='row'>
-                        <div class="col-sm">
+                        <div class="col-sm"  style={{color:'black'}}>
                         PLAY
                         {listNeeds(play)}
                         </div>
                     </div>
                     <div class='row'>
-                        <div class="col-sm">
+                        <div class="col-sm"  style={{color:'black'}}>
                         HONESTY
                         {listNeeds(honesty)}
                         </div>
                     </div>
                     <div class='row'>
-                        <div class="col-sm">
+                        <div class="col-sm"  style={{color:'black'}}>
                         PHYSICAL WELL-BEING
                         {listNeeds(physicalWellBeing)}
                         </div>
@@ -177,7 +177,7 @@ export default function NeedsInventory () {
 
             </div>
             
-            <div style={{textAlign:'center', marginTop:'3%'}}>
+            <div style={{textAlign:'center', marginTop:'3%', color:'black'}}>
             (c) 2005 by Center for Nonviolent Communication <br/>
             Website: www.cnvc.org Email: cnvc@cnvc.org<br/>
             Phone: +1.505-244-4041      

@@ -91,7 +91,7 @@ const MyDocument = (props) => (
 
      
       <View style={[styles.section], {textAlign:'center', marginTop:'7%', bottom:5}}>
-            <Text style={{fontSize: '11px', color:'gold'}}>{props.quote} </Text>
+            <Text style={{fontSize: '11px', color:'black'}}>{props.quote} </Text>
           </View>
    
      </Page>

@@ -96,7 +96,7 @@ Font.registerEmojiSource({
     url: 'https://twemoji.maxcdn.com/2/72x72/'
 })
   
-    const colors = ['violet','indigo','blue','green', 'gold', 'orange', 'red']
+    const colors = ['violet','indigo','blue','green', '#ffd300', 'orange', 'red']
     const index = Math.floor(Math.random()*colors.length)
     const styles = StyleSheet.create({
         page:{
