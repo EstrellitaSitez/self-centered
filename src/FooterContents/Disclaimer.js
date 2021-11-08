@@ -10,7 +10,7 @@ const Disclaimer = () => (
            <b>DISCLAIMER</b>: Self analysis by no means replaces the help of a professional. 
         </div>
         <div style={{color:'#800020'}}>
-          <b>  <Link  id='ruminationLink' style={{color:'#800020'}}  to='https://www.verywellmind.com/repetitive-thoughts-emotional-processing-or-rumination-3144936' target='_blank'> investigate, don't ruminate</Link></b>
+          <b>  <a  id='ruminationLink' style={{color:'#800020'}}  href='https://www.verywellmind.com/repetitive-thoughts-emotional-processing-or-rumination-3144936' target='_blank'> investigate, don't ruminate</a></b>
         </div>
     </div>
 )
