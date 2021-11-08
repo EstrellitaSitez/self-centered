@@ -22,7 +22,6 @@ import OnlineWorksheet from './KnowThyselfPage/OnlineWorksheet';
 
 function App() {
 
-  console.log('GitHub: EstrellitaSitez ♥')
 
   const hideLoader = () => {
    const loader= document.querySelector('.loaderContainer')
