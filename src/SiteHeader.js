@@ -28,7 +28,7 @@ export default function SiteHeader(){
                <p style={{color:'black'}}>
                  <i>“Knowing yourself is the beginning of all wisdom.” </i>
                 </p>
-                <p>— Aristotle</p>
+                <p style={{color:'black'}}>— Aristotle</p>
 
                 <Divider/>
                 

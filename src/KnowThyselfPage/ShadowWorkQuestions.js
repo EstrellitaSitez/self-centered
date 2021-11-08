@@ -33,7 +33,7 @@ export default function ShadowWorkQuestions(props) {
            <div style={{marginLeft:'auto', marginRight:'auto', marginBottom:'2%', width:'50vw'}}>
            {
                 (props.questions.length>0)? 
-                <div> <Divider/>
+                <div style={{color:'black'}}> <Divider/>
                      <p><b> You may look through all colors. Select up to three questions total.</b></p>
                      Refer to the   <Link   to='/NeedsInventory'  target="_blank"> Needs Inventory⬈ </Link> 
                     and the   <Link   to='/FeelingsInventory'  target="_blank"> Feelings Inventory⬈</Link> to further understand the roots of your triggers.

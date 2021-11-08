@@ -6,7 +6,7 @@ import './FooterLink.css'
 
 const Disclaimer = () => (
     <div className='footerLink'>
-        <div>
+        <div style={{color:'black'}}>
            <b>DISCLAIMER</b>: Self analysis by no means replaces the help of a professional. 
         </div>
         <div style={{color:'#800020'}}>

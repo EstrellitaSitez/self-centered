@@ -68,7 +68,7 @@ export default function DettachmentMeditation(){
              
                  : 
                <div>
-                   <p>
+                   <p style={{color:'black'}}>
                       Take your mind on a walk. Much like a puppy, your mind will get distracted and try to pull the leash (your focus) in a different direction. The goal here is to notice <i>what</i> your mind is getting distracted by. Watch out for any patterns in these distractions.
                    </p>
         

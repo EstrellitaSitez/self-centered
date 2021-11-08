@@ -131,7 +131,7 @@ export default function VisualizationMeditation(){
                 marginLeft:'25%',
                 marginRight:'25%'
             }}>
-                <div>
+                <div style={{color:'black'}}>
                 Pick a landscape below. As you immerse yourself in the video/sound, think about how you would feel in this landscape. Stretch your imagination. Where are you? What are you doing there? Which senses are the most active? What emotions are brought up? How do you feel?
                 </div>
                 <br/>
@@ -165,13 +165,13 @@ export default function VisualizationMeditation(){
                         {
                             sounds.map( (sound, i) =>{
                                 return(
-                                    <td key={i}> 
+                                    <td key={i} style={{color:'black'}}> 
                                         <SoundOutlined onClick={()=>selectSound(sound)} />
                                     </td>
                                 )
                                 })
                         }
-                        <td>
+                        <td style={{color:'black'}}>
                             <StopOutlined onClick={()=>selectSound(null)}/>
                         </td>
                     </tr>
@@ -179,7 +179,7 @@ export default function VisualizationMeditation(){
                 </table>
             </div>
             <div style={{textAlign:'center'}}>
-                <h5>Videos:</h5>
+                <h5 >Videos:</h5>
             {makeCards(visualizations)}
             </div>
           
