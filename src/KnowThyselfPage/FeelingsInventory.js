@@ -308,10 +308,11 @@ export default function FeelingsInventory(){
 
 
     const createColumn = (object) => {
+        let i = 0
         let results =[]
         for (let [category, feelings] of Object.entries(object)) {
             results.push (
-                <div style={{display:'inline', margin:'5%', backgroundColor:'teal', padding:'3%'}}>
+                <div key={i++} style={{display:'inline', margin:'5%', backgroundColor:'teal', padding:'3%'}}>
                    <div style={{color:'white', fontFamily:'Rajdhani', fontWeight:'bold'}}>{category}</div> 
                     <Divider style={{backgroundColor:'white'}}/>
                         {feelings.map((feeling,i)=>listFeelings(feeling,i))}

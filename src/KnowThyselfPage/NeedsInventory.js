@@ -106,7 +106,7 @@ export default function NeedsInventory () {
             needsList.map(
                 (need, i) => {
                     return (
-                        <li> <span key={i} style={{color:'teal', fontFamily:'Rajdhani', fontWeight:'bold'}}> {need} </span> </li>
+                        <li key={i}> <span  style={{color:'teal', fontFamily:'Rajdhani', fontWeight:'bold'}}> {need} </span> </li>
                     )
                 }
             )
@@ -127,47 +127,47 @@ export default function NeedsInventory () {
 
             <Divider/>
 
-            <div class = 'row'>
+            <div className = 'row'>
 
-            <div class="col-sm">
+            <div className="col-sm">
                 CONNECTION
                 {listNeeds(connection)}
                 </div>
 
-            <div class="col-sm">
+            <div className="col-sm">
                 MEANING
                 {listNeeds(meaning)}
                 </div>
 
-            <div class="col-sm" >
+            <div className="col-sm" >
 
-                    <div class='row'>
-                        <div class="col-sm"  style={{color:'black'}}>
+                    <div className='row'>
+                        <div className="col-sm"  style={{color:'black'}}>
                         AUTONOMY
                         {listNeeds(autonomy)}
                         </div>
                         
                     </div>
-                    <div class='row'>
-                          <div class="col-sm"  style={{color:'black'}}>
+                    <div className='row'>
+                          <div className="col-sm"  style={{color:'black'}}>
                         PEACE
                         {listNeeds(peace)}
                         </div>
                     </div>
-                    <div class='row'>
-                        <div class="col-sm"  style={{color:'black'}}>
+                    <div className='row'>
+                        <div className="col-sm"  style={{color:'black'}}>
                         PLAY
                         {listNeeds(play)}
                         </div>
                     </div>
-                    <div class='row'>
-                        <div class="col-sm"  style={{color:'black'}}>
+                    <div className='row'>
+                        <div className="col-sm"  style={{color:'black'}}>
                         HONESTY
                         {listNeeds(honesty)}
                         </div>
                     </div>
-                    <div class='row'>
-                        <div class="col-sm"  style={{color:'black'}}>
+                    <div className='row'>
+                        <div className="col-sm"  style={{color:'black'}}>
                         PHYSICAL WELL-BEING
                         {listNeeds(physicalWellBeing)}
                         </div>
