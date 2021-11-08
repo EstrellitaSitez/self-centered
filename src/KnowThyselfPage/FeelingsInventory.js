@@ -1,5 +1,7 @@
 import { Divider } from 'antd'
 import React from 'react'
+import { Link } from 'react-router-dom'
+  
 
 import '../Note.css'
 
@@ -363,7 +365,7 @@ export default function FeelingsInventory(){
 
             <div id='footer'>
              
-                     <p id='note'><a href='#unsatisfied'> ...Unsatisfied Needs </a></p>
+                     <p id='note'>  <Link   to='#unsatisfied'> ...Unsatisfied Needs </Link></p>
 
                    
                

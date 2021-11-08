@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import ShadowWorkForm from './ShadowWorkForm'
 
 export default function OnlineWorksheet() {
-    const baseUrl = process.env.REACT_APP_BASE_URL
+ 
     const [questions, setQuestions] = useState([])
     
     useEffect(()=>{
@@ -22,7 +24,7 @@ export default function OnlineWorksheet() {
                     <div style={{textAlign:'center', minHeight:'25vh', marginTop:'3em'}}>
                        
                         <p>You haven't selected any questions :( </p>
-                        <a href={baseUrl+'/know-thyself'}> Go check some out </a>
+                          <Link   to='/know-thyself'> Go check some out </Link>
                     
                     </div>
             }

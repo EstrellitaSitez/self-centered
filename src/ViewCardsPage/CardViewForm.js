@@ -6,9 +6,10 @@ import draftToHtml from 'draftjs-to-html';
 
 
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import { withRouter } from 'react-router';
 
 
-export default function CardViewForm(props) {
+function CardViewForm(props) {
 
     // const [notes, takeNotes] = useState('')
     const [editorState, setEditorState] = useState(() => EditorState.createEmpty())
@@ -48,3 +49,5 @@ export default function CardViewForm(props) {
         </div>
     )
 }
+
+export default withRouter(CardViewForm)

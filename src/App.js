@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import 'antd/dist/antd.css';
-
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 
 import Landing from './LandingPage/Landing';
 import SiteHeader from './SiteHeader';
@@ -34,8 +33,7 @@ function App() {
     hideLoader()
    } )
   
-   const baseUrl= process.env.REACT_APP_BASE_URL
-  
+  // Hash history for static sites but since gh pages is forcing us to
   return (
     
     <div className='App container-fluid'>
@@ -44,30 +42,30 @@ function App() {
 
     <br></br>
     <div>
-    <Router>
+
     <Switch>
-      <Route exact={true} path= {baseUrl+'/fill-out-worksheet'}> <OnlineWorksheet/> </Route>
-      <Route exact={true} path={baseUrl+'/feedback'}><Feedback/> </Route>
-      <Route exact={true} path={baseUrl+'/disclaimer'}><Disclaimer/></Route>
-      <Route exact={true} path={baseUrl+'/about'}><About/></Route>
-      <Route exact={true} path={baseUrl+'/view-cards/spread-preview'}><SpreadPDFTab /> </Route>
+      <Route exact={true} path= '/fill-out-worksheet'> <OnlineWorksheet/> </Route>
+      <Route exact={true} path='/feedback'><Feedback/> </Route>
+      <Route exact={true} path='/disclaimer'><Disclaimer/></Route>
+      <Route exact={true} path='/about'><About/></Route>
+      <Route exact={true} path='/view-cards/spread-preview'><SpreadPDFTab /> </Route>
     
-      <Route exact={true} path={baseUrl+'/view-cards'}><BuildTarotIntuitionPage/></Route>
-      <Route exact={true} path={baseUrl+`/meditation/:meditationName`}>
+      <Route exact={true} path='/view-cards'><BuildTarotIntuitionPage/></Route>
+      <Route exact={true} path='/meditation/:meditationName'>
         <MeditationContainer />
       </Route>
-      <Route exact={true} path={baseUrl+'/feelings-inventory'}>
+      <Route exact={true} path='/feelings-inventory'>
         <FeelingsInventory/>
       </Route>
-      <Route exact={true} path={baseUrl+'/needs-inventory'}><NeedsInventory/></Route>
-      <Route exact={true} path={baseUrl+'/know-thyself'}><KnowThyself/></Route>
-      <Route exact={true} path={baseUrl+"/meditation"}><MeditationPage/>
+      <Route exact={true} path='/needs-inventory'><NeedsInventory/></Route>
+      <Route exact={true} path='/know-thyself'><KnowThyself/></Route>
+      <Route exact={true} path="/meditation"><MeditationPage/>
       </Route>
 
   
-      <Route path={baseUrl+"/"}><Landing/></Route>
+      <Route exact ={true} path="/"><Landing/></Route>
     </Switch>
-    </Router>
+ 
     </div>
     <Footer/>
     </div>

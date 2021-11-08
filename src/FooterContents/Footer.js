@@ -1,25 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+  
+
 
 const anchorStyle = {
     color:'black',
     padding:'1%'
 }
-const baseUrl = process.env.REACT_APP_BASE_URL
 const Footer = () => (
     <div style={{bottom:'0', position:'relative', textAlign:'center', width:'100vw', fontFamily:'Khand', paddingTop:'4%', color:'grey'}}>
             ✨ made by gjdlc ✨
             <div>
-            <a href={baseUrl+'/disclaimer'} style={anchorStyle}>
+              <Link   to='/disclaimer' style={anchorStyle}>
                 Disclaimer
-            </a>
+            </Link>
             |
-            <a href={baseUrl+'/about' }style={anchorStyle}>
+              <Link   to='/about' style={anchorStyle}>
                 About
-            </a>
+            </Link>
             |
-            <a style={anchorStyle} href={baseUrl+'/feedback'}>
+              <Link  style={anchorStyle}  to='/feedback'>
                 Feedback
-            </a>
+            </Link>
            
 
             </div>

@@ -1,6 +1,8 @@
 import React from 'react'
 import {LeftOutlined} from '@ant-design/icons'
 import { isMobile } from 'react-device-detect'
+import { Link } from 'react-router-dom'
+  
 
 
 export default function MeditationNav(){
@@ -9,10 +11,9 @@ export default function MeditationNav(){
         width:'fit-content',
         marginLeft: isMobile? '': '3em'
     }
-    const baseUrl = process.env.REACT_APP_BASE_URL
     return(
         <div>
-            <a style={aStyle} href={baseUrl+'/Meditation'}><LeftOutlined /> </a>
+              <Link  style={aStyle}  to='/Meditation'><LeftOutlined /> </Link>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { isMobile } from 'react-device-detect'
 import {SoundOutlined} from '@ant-design/icons'
+import { Link } from 'react-router-dom'
 
 import singingBowl from '../Assets/MeditationSounds/singingBowl.wav'
 import './GroundingMeditation.css'
@@ -38,7 +39,7 @@ export default function GroundingMeditation(){
     let sec = seconds%60
     let min = seconds/60
 
-    const audioPopOver =  <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
+    const audioPopOver =  <div>Background audio track provided by   <Link   to='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</Link> under a   <Link   to='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</Link> license.</div>
 
 
     return (

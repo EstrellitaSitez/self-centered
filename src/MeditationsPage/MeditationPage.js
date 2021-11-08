@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link, useRouteMatch} from "react-router-dom";
-
+  
 import {Card, Divider} from 'antd';
 
 import visualization from '../Assets/MeditationThumbnails/visualization.png';
@@ -56,7 +56,7 @@ export default function MeditationPage(){
                 {
                     meditations.map((meditation, i)=> {
                         return (
-                            <Link key={i} to={`${url}/${meditation.name}`} style={{ padding:'1%', verticalAlign:'middle'}}>
+                              <Link  key={i}  to={`${url}/${meditation.name}`} style={{ padding:'1%', verticalAlign:'middle'}}>
                             <Card
                             hoverable
                             // loading

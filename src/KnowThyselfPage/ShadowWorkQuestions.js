@@ -1,11 +1,12 @@
 import React from 'react' 
 import { Divider } from 'antd'
 import ShadowWorkQuestion from './ShadowWorkQuestion'
+import { Link } from 'react-router-dom'
+  
 
 
 
 export default function ShadowWorkQuestions(props) {
-    const baseUrl = process.env.REACT_APP_BASE_URL
 
     const passQuestionToKnowThyselfContainer = (question) => {
       return props.addToQuestions(question)
@@ -34,8 +35,8 @@ export default function ShadowWorkQuestions(props) {
                 (props.questions.length>0)? 
                 <div> <Divider/>
                      <p><b> You may look through all colors. Select up to three questions total.</b></p>
-                     Refer to the <a href={baseUrl+'/NeedsInventory'}  target="_blank"> Needs Inventory⬈ </a> 
-                    and the <a href={baseUrl+'/FeelingsInventory'}  target="_blank"> Feelings Inventory⬈</a> to further understand the roots of your triggers.
+                     Refer to the   <Link   to='/NeedsInventory'  target="_blank"> Needs Inventory⬈ </Link> 
+                    and the   <Link   to='/FeelingsInventory'  target="_blank"> Feelings Inventory⬈</Link> to further understand the roots of your triggers.
                     
                  <Divider/></div> 
                 : null

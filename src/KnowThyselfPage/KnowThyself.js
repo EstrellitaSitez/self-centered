@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
-// import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+  
+
 import ShadowWorkQuestions from './ShadowWorkQuestions'
 import { PDFDownloadLink} from '@react-pdf/renderer';
 import { Spin, Button } from 'antd';
@@ -255,7 +257,7 @@ export default function KnowThyself() {
                 (selectedColor && isMobile)?    
                    
                 <p id='note' style={{opacity:opacity}}>
-                   <a href='#ShadowWorkQuestions' onClick={()=> setOpacity(0.3)}> Prompts ⇩</a> 
+                     <Link   to='#ShadowWorkQuestions' onClick={()=> setOpacity(0.3)}> Prompts ⇩</Link> 
                 </p>
                 :
                 null

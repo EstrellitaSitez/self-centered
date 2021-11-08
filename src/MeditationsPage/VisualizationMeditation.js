@@ -1,4 +1,6 @@
 import React, { useState }  from 'react'
+import { Link } from 'react-router-dom'
+  
 import {Card, Tooltip} from 'antd'
 import { PlaySquareOutlined, SoundOutlined, StopOutlined} from '@ant-design/icons'
 import Meta from 'antd/lib/card/Meta'
@@ -108,9 +110,9 @@ export default function VisualizationMeditation(){
         )
     }
 
-    const videoPopOver = <div> Videos provided by <a href='https://mixkit.co/free-video-backgrounds/'> MixKit </a> under a <a href='https://mixkit.co/license/#videoFree'></a>Stock Video Free License</div>
+    const videoPopOver = <div> Videos provided by   <Link   to='https://mixkit.co/free-video-backgrounds/'> MixKit </Link> under a   <Link   to='https://mixkit.co/license/#videoFree'></Link>Stock Video Free License</div>
 
-    const audioPopOver =  <div>Background audio track provided by <a href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a <a href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
+    const audioPopOver =  <div>Background audio track provided by   <Link   to='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</Link> under a   <Link   to='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</Link> license.</div>
 
 
 
