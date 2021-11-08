@@ -7,7 +7,7 @@ import nightSounds from '../Assets/MeditationSounds/nightSounds.wav'
 import { isMobile } from 'react-device-detect';
 import SourcePopOver from './SourcePopOver';
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
   
 
 
@@ -32,7 +32,7 @@ export default function DettachmentMeditation(){
         color:'black'
     }
 
-    const audioPopOver =  <div>Background audio track provided by   <Link   to='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</Link> under a   <Link   to='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</Link> license.</div>
+    const audioPopOver =  <div>Background audio track provided by   <a   href='https://noises.online' title='Noises.Online' target='_blank'>Noises.Online</a> under a   <a   href='http://creativecommons.org/licenses/by/3.0/' title='Creative Commons BY 3.0' target='_blank'>CC 3.0 BY</a> license.</div>
 
 
     return(
