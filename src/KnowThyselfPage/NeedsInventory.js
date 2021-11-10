@@ -129,12 +129,12 @@ export default function NeedsInventory () {
 
             <div className = 'row'>
 
-            <div className="col-sm">
+            <div className="col-sm" style={{color:'black'}}>
                 CONNECTION
                 {listNeeds(connection)}
                 </div>
 
-            <div className="col-sm">
+            <div className="col-sm" style={{color:'black'}}>
                 MEANING
                 {listNeeds(meaning)}
                 </div>
