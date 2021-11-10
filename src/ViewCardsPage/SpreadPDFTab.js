@@ -30,7 +30,7 @@ export default function SpreadPDFTab(props) {
                     <SpreadPDF contents={pdfContents}/>
                 </PDFViewer> 
                 :
-                <div style ={{textAlign:'center'}}>
+                <div style ={{textAlign:'center', color:'black'}}>
                     Ooops! Looks like there's no preview to show.
                 </div>
             }
