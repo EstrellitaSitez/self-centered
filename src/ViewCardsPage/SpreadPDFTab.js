@@ -12,7 +12,7 @@ export default function SpreadPDFTab(props) {
         if (props.spread){
             setPDFContents(props.spread)
             console.log("CONTENTSSS", pdfContents)
-        }
+          }
     },[pdfContents])
 
     return(

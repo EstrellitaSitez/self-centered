@@ -35,7 +35,7 @@ function App() {
     hideLoader()
    }, [cardsSpread] )
   
-   console.log("SPREAD: ", cardsSpread)
+
   // Hash history for static sites but since gh pages is forcing us to
   return (
     
