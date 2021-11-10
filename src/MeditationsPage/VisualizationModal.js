@@ -21,6 +21,7 @@ export default function VisualizationModal(props){
         visible={visible}
         closable= {true}
         onCancel={handleCancel}
+        footer= {null}
     >
             <video autoPlay controls loop style={{width:'100%'}}>  <source src={url}
             type="video/mp4"/>

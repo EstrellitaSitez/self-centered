@@ -1,10 +1,11 @@
 import React, { useState }  from 'react'
   
 import {Card, Tooltip} from 'antd'
-import { PlaySquareOutlined, SoundOutlined, StopOutlined} from '@ant-design/icons'
+import { PlaySquareOutlined} from '@ant-design/icons'
 import Meta from 'antd/lib/card/Meta'
 
 import VisualizationModal from './VisualizationModal'
+import SoundComponent from './SoundComponent'
 
 import orbitingEarth from '../Assets/MeditationVideos/aroundTheWorld.mp4'
 import gardenRain from '../Assets/MeditationVideos/gardenRain.mp4'
@@ -26,7 +27,8 @@ export default function VisualizationMeditation(){
     const [currentUrl, selectURL] = useState(null)
     const [soundSelected, selectSound] = useState(null)
 
-    // Add white noise to all the videos
+    
+    
 
     const visualizations = [
         {   title:'Orbiting Earth',
@@ -164,15 +166,11 @@ export default function VisualizationMeditation(){
                         {
                             sounds.map( (sound, i) =>{
                                 return(
-                                    <td key={i} style={{color:'black'}}> 
-                                        <SoundOutlined onClick={()=>selectSound(sound)} />
-                                    </td>
+                                    <SoundComponent sound={sound} selectSound={selectSound} key={i} soundSelected={soundSelected}/>
+                                    // <SoundOutlined  key={i} style={{color: (sound === soundSelected)? 'teal' : 'black'}} onClick={selectSound(sound)} />
                                 )
                                 })
                         }
-                        <td style={{color:'black'}}>
-                            <StopOutlined onClick={()=>selectSound(null)}/>
-                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -188,7 +186,7 @@ export default function VisualizationMeditation(){
                     :
                     null
             }
-            <p style={{fontSize:'small', bottom:0 }}>
+            <p style={{fontSize:'small', bottom:0, color:'black' }}>
                 Sources:
                  <SourcePopOver title={audioPopOver} buttonText='Audio' />
                  <SourcePopOver title={videoPopOver} buttonText='Video' />
