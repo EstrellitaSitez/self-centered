@@ -111,8 +111,8 @@ export default function BuildTarotIntuitionPage(props) {
 
                <p>
                 ***
-                     Refer to the   <Link  style={linkStyle} to='/needs-inventory' target='_blank'> Needs Inventory⬈ </Link> 
-                    and the   <Link  style={linkStyle} to='/feelings-inventory' target='_blank'> Feelings Inventory⬈</Link> to name and understand your emotions.
+                     Refer to the   <Link  style={linkStyle} to='/feelings-inventory' target='_blank'> Feelings Inventory⬈ </Link> 
+                    and the   <Link  style={linkStyle} to='/needs-inventory' target='_blank'> Needs Inventory⬈</Link> to name and understand your emotions.
                 ***   
                </p>
                </div>
