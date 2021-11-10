@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import { PDFDownloadLink} from '@react-pdf/renderer';
 import { Spin, Button } from 'antd';
 import CardContainer from './CardContainer';
@@ -9,6 +9,7 @@ import TarotQuestionPopOver from './TarotQuestionPopOver';
 import '../Note.css'
 import { isMobile } from 'react-device-detect';
 import SpreadPDF from './SpreadPDF';
+
 
 
 
@@ -60,6 +61,11 @@ export default function BuildTarotIntuitionPage(props) {
         width:'max-content'
     }
 
+    const linkStyle = {
+        color: 'white',
+        textDecoration: isMobile? 'underline' : 'none'
+    }
+
     return(
         <div style={{
             textAlign:'center',
@@ -101,6 +107,13 @@ export default function BuildTarotIntuitionPage(props) {
                    <b>
                        If you refresh the page, your observations will be erased.
                    </b>
+               </p>
+
+               <p>
+                ***
+                     Refer to the   <Link  style={linkStyle} to='/needs-inventory' target='_blank'> Needs Inventory⬈ </Link> 
+                    and the   <Link  style={linkStyle} to='/feelings-inventory' target='_blank'> Feelings Inventory⬈</Link> to name and understand your emotions.
+                ***   
                </p>
                </div>
 
