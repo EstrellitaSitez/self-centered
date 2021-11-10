@@ -1,16 +1,17 @@
 import React, { useCallback, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { PDFDownloadLink} from '@react-pdf/renderer';
+import { Spin, Button } from 'antd';
 import CardContainer from './CardContainer';
 import ViewSpecific from './ViewSpecific';
 import CardViewModal from './CardViewModal';
 import TarotQuestionPopOver from './TarotQuestionPopOver';
 import '../Note.css'
+import { isMobile } from 'react-device-detect';
+import SpreadPDF from './SpreadPDF';
 
 
 
-// show all cards switch button
-//shuffled or categorized swich button
 
 export default function BuildTarotIntuitionPage(props) {
 
@@ -44,6 +45,20 @@ export default function BuildTarotIntuitionPage(props) {
         history.push(('/view-cards/spread-preview')) 
     }
 
+    const downloadButtonsStyle = {
+        backgroundColor:'white', 
+        color:'teal', 
+        height:'100%', 
+        width: '8%', 
+        fontSize:'100%', 
+        padding:'2%', 
+        cursor:'pointer', 
+        boxShadow:'8px 5px 5px grey'
+    }
+
+    const downloadLinkStyle = {
+        width:'max-content'
+    }
 
     return(
         <div style={{
@@ -91,13 +106,22 @@ export default function BuildTarotIntuitionPage(props) {
 
                
 
-               {/* <div style={{height:'100%', padding:'2%'}}> */}
-               <div 
-               onClick = {()=> openPDFPreview()}
-               style={{backgroundColor:'white', color:'teal', height:'100%', width: '8%', fontSize:'100%', padding:'2%', cursor:'pointer', boxShadow:'8px 5px 5px grey'}}
-               >
-                  <b> {spread.length} </b>
-               </div>
+               {
+                   isMobile? 
+                   <PDFDownloadLink style={{...downloadButtonsStyle, ...downloadLinkStyle}} document={<SpreadPDF contents={spread} />} fileName="Self-Centered-Tarot-ShadowWork.pdf">
+                   {({ blob, url, loading, error }) =>
+                    loading ? <Spin/> : <Button style={{backgroundColor:'transparent', border:'none', width:'100%', color:'inherit'}} type='ghost'> {spread.length} </Button>
+                   }
+                   </PDFDownloadLink>
+                    :
+                    <div 
+                    onClick = {()=> openPDFPreview()}
+                    style={downloadButtonsStyle}
+                    >
+                       <b> {spread.length} </b>
+                    </div>
+               }
+               
       
            </div>  
 

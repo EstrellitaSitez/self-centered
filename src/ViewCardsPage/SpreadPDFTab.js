@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { PDFViewer } from '@react-pdf/renderer'
 import SpreadPDF from './SpreadPDF'
+import { isMobile } from 'react-device-detect'
 
 export default function SpreadPDFTab(props) {
 
@@ -19,7 +20,6 @@ export default function SpreadPDFTab(props) {
             
             {
                 ((pdfContents != null) && (pdfContents.length > 0))? 
-
                 <PDFViewer
                 style ={{height:'100vh', width:'100vw'}}
                 width='90%'
